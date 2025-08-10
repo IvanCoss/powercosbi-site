@@ -1,17 +1,9 @@
-# PowerCos BI - Sitio bilingüe
+README.txt
 
-Este paquete contiene:
-- index.html (página principal)
-- gracias.html (página de agradecimiento)
-- Selector de idioma ES/EN en ambas páginas
-- Subtítulo fijo: "COS = Customized Organization Solutions"
-
-## Cómo subir a GitHub y Vercel
-
-1. Ve a tu repositorio en GitHub.
-2. Haz clic en "Add file" → "Upload files".
-3. Arrastra `index.html` y `gracias.html`.
-4. Haz clic en "Commit changes".
-5. Vercel detectará el cambio y actualizará tu dominio.
-
-Listo, tu sitio tendrá selector de idioma y el subtítulo en ambas páginas.
+Cómo publicar (GitHub + Vercel)
+1) Sube index.html y gracias.html a tu repo (Add file → Upload files → Commit).
+2) Vercel desplegará automáticamente. Prueba / y /gracias.html.
+Notas:
+- Selector ES/EN queda guardado en el navegador (localStorage).
+- Tagline fijo: "Customized Organization Solutions" (sin 'COS =').
+- Botones de PayPal listos.

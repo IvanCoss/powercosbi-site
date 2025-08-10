@@ -1,50 +1,62 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gracias - PowerCos BI</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gracias / Thank you – PowerCos BI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    body { font-family: Arial, sans-serif; margin:0; padding:0; text-align:center; background:#f8f8f8; }
-    header { background:#111; color:#fff; padding:10px 20px; }
-    header h1 { margin:0; font-size:1.5em; }
-    header h2 { margin:0; font-size:0.9em; font-weight:normal; }
-    main { padding:40px 20px; }
-    footer { background:#111; color:#fff; padding:10px; font-size:0.9em; }
-    .lang-switch { cursor:pointer; position:absolute; right:20px; top:15px; color:white; }
+    :root{--yellow:#F2C811;--dark:#0E1116;--mid:#171B22;--text:#EDEFF3;--muted:#A9AFB9}
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,#0c0f14 0%, var(--dark) 100%);color:var(--text);font-family:Poppins,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;display:grid;min-height:100vh}
+    .container{width:min(820px,92vw);margin:auto;padding:28px}
+    .card{background:var(--mid);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:22px}
+    h1{margin:0 0 10px;font-size:clamp(22px,5vw,32px)}
+    p{color:var(--muted);margin:10px 0}
+    .btn{display:inline-flex;align-items:center;gap:8px;background:var(--yellow);color:#111;padding:12px 16px;border-radius:12px;font-weight:700;margin-top:16px}
+    .top{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+    .brand{display:flex;align-items:center;gap:10px}
+    .logo{width:42px;height:42px}
+    .brand-sub{font-size:12px;color:#A9AFB9}
+    .lang{display:inline-flex;gap:6px;border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:6px 10px;font-size:12px;color:#A9AFB9}
+    .lang button{background:none;border:0;color:inherit;cursor:pointer;padding:4px 8px;border-radius:10px}
+    .lang button.active{background:rgba(255,255,255,.08);color:#fff}
   </style>
 </head>
 <body>
-  <header>
-    <div class="lang-switch">
-      <span onclick="setLang('es')">ES</span> | <span onclick="setLang('en')">EN</span>
+  <div class="container">
+    <div class="top">
+      <div class="brand">
+        <svg class="logo" viewBox="0 0 100 100" aria-hidden="true"><path fill="#F2C811" d="M50 5 92 30v40L50 95 8 70V30z"/><g transform="translate(24,28)"><rect x="4" y="32" width="8" height="18" rx="2" fill="#111"/><rect x="22" y="24" width="8" height="26" rx="2" fill="#111"/><rect x="40" y="16" width="8" height="34" rx="2" fill="#111"/><path d="M2 26 C10 18, 24 12, 40 10" stroke="#111" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M40 4 l10 6 -10 6" fill="#111"/></g></svg>
+        <div>
+          <strong>PowerCos BI</strong><br>
+          <span class="brand-sub">Customized Organization Solutions</span>
+        </div>
+      </div>
+      <div class="lang" aria-label="language switch">
+        <button id="esBtn" class="active" type="button">ES</button>
+        <button id="enBtn" type="button">EN</button>
+      </div>
     </div>
-    <h1>PowerCos BI</h1>
-    <h2 id="subtitle">COS = Customized Organization Solutions – Soluciones personalizadas para tu organización.</h2>
-  </header>
-  <main>
-    <h2 id="thanks-title">¡Gracias por tu compra!</h2>
-    <p id="thanks-text">Tu plantilla está en camino a tu correo. Recuerda que ofrecemos Customized Organization Solutions para llevar tus datos al siguiente nivel.</p>
-  </main>
-  <footer>© 2025 PowerCos BI</footer>
+    <div class="card">
+      <h1 data-i18n="title">¡Gracias por tu compra!</h1>
+      <p data-i18n="p1">Tu plantilla está en camino a tu correo. Recordatorio: ofrecemos <em>Customized Organization Solutions</em> para llevar tus datos al siguiente nivel.</p>
+      <p data-i18n="p2">Si no ves el correo, revisa tu carpeta de spam o escríbeme directamente a <a href="mailto:ivanhcoss@icloud.com">ivanhcoss@icloud.com</a>.</p>
+      <a class="btn" href="/" data-i18n="btn">Volver al inicio</a>
+    </div>
+  </div>
   <script>
-    const dict = {
-      es: {
-        subtitle: "COS = Customized Organization Solutions – Soluciones personalizadas para tu organización.",
-        thanksTitle: "¡Gracias por tu compra!",
-        thanksText: "Tu plantilla está en camino a tu correo. Recuerda que ofrecemos Customized Organization Solutions para llevar tus datos al siguiente nivel."
-      },
-      en: {
-        subtitle: "COS = Customized Organization Solutions – Tailored solutions for your business.",
-        thanksTitle: "Thank you for your purchase!",
-        thanksText: "Your template is on its way to your email. Remember, we deliver Customized Organization Solutions to take your data to the next level."
-      }
+    const dict={
+      es:{title:'¡Gracias por tu compra!',p1:'Tu plantilla está en camino a tu correo. Recordatorio: ofrecemos <em>Customized Organization Solutions</em> para llevar tus datos al siguiente nivel.',p2:'Si no ves el correo, revisa tu carpeta de spam o escríbeme directamente a <a href="mailto:ivanhcoss@icloud.com">ivanhcoss@icloud.com</a>.',btn:'Volver al inicio'},
+      en:{title:'Thank you for your purchase!',p1:'Your template is on its way to your email. Reminder: we deliver <em>Customized Organization Solutions</em> to take your data to the next level.',p2:'If you don’t see the email, check your spam folder or write me directly at <a href="mailto:ivanhcoss@icloud.com">ivanhcoss@icloud.com</a>.',btn:'Back to home'}
     };
-    function setLang(lang) {
-      document.getElementById('subtitle').innerText = dict[lang].subtitle;
-      document.getElementById('thanks-title').innerText = dict[lang].thanksTitle;
-      document.getElementById('thanks-text').innerText = dict[lang].thanksText;
-    }
+    const els=document.querySelectorAll('[data-i18n]');
+    function applyLang(lang){ els.forEach(el=>{const k=el.getAttribute('data-i18n'); if(dict[lang][k]) el.innerHTML=dict[lang][k];}); document.documentElement.lang=lang; localStorage.setItem('lang',lang); esBtn.classList.toggle('active',lang==='es'); enBtn.classList.toggle('active',lang==='en'); }
+    const esBtn=document.getElementById('esBtn'); const enBtn=document.getElementById('enBtn');
+    esBtn.addEventListener('click',()=>applyLang('es')); enBtn.addEventListener('click',()=>applyLang('en'));
+    applyLang(localStorage.getItem('lang')||'es');
   </script>
 </body>
 </html>
