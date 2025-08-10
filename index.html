@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>PowerCos BI – Dashboards inteligentes para ti</title>
-  <meta name="description" content="PowerCos BI — Customized Organization Solutions. Plantillas profesionales de Power BI listas para usar." />
+  <meta name="description" content="PowerCos BI — Customized Organization Solutions. Plantillas y dashboards profesionales de Power BI." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -25,26 +25,28 @@
     .grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:14px}
     .card{background:var(--mid);border:1px solid rgba(255,255,255,.06);border-radius:18px;box-shadow:var(--shadow);overflow:hidden}
     .shot{padding:12px 12px 0}
+    .shot img{display:block;width:100%;height:auto;border-radius:14px;border:1px solid rgba(255,255,255,.08)}
     .body{padding:14px}
     .card h3{margin:0 0 6px;font-size:clamp(16px,3.6vw,18px)}
     .price{font-size:clamp(18px,4.5vw,22px);font-weight:700;margin:12px 0 12px}
+    .mock{display:none !important;} /* oculta placeholders antiguos */
     @media (min-width: 700px){ .wrap{grid-template-columns:1.05fr .95fr} .grid{grid-template-columns:1fr 1fr} }
     @media (min-width: 1060px){ .grid{grid-template-columns:repeat(3,1fr)} }
     @media (min-width: 1400px){ .grid{grid-template-columns:repeat(4,1fr)} }
-    img{max-width:100%;height:auto;border-radius:14px;border:1px solid rgba(255,255,255,.08)}
   </style>
 </head>
 <body>
   <section class="hero">
     <div class="container wrap">
       <div>
-        <h2 class="title" data-i18n="hero.title">Dashboards inteligentes para ti</h2>
-        <p class="subtitle" data-i18n="hero.subtitle">Customized Organization Solutions – Soluciones personalizadas para tu organización.</p>
+        <h2 class="title">Dashboards inteligentes para ti</h2>
+        <p class="subtitle">Customized Organization Solutions – Soluciones personalizadas para tu organización.</p>
         <div class="actions">
-          <a class="btn" href="#plantillas" data-i18n="hero.btn">Explorar plantillas</a>
+          <a class="btn" href="#plantillas">Explorar plantillas</a>
         </div>
       </div>
       <div class="hero-img">
+        <!-- Asegúrate de tener este archivo en assets/ -->
         <img src="./assets/hero-clean.webp" alt="Dashboard mockup neutral">
       </div>
     </div>
