@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <path d="M64 4 L118 36 V92 L64 124 L10 92 V36 Z" fill="#F2C811"/>
+  <!-- Bars -->
+  <rect x="30" y="82" width="10" height="18" rx="2" fill="#0B0E13"/>
+  <rect x="48" y="72" width="10" height="28" rx="2" fill="#0B0E13"/>
+  <rect x="66" y="60" width="10" height="40" rx="2" fill="#0B0E13"/>
+  <rect x="84" y="50" width="10" height="50" rx="2" fill="#0B0E13"/>
+  <!-- Upward arrow line -->
+  <path d="M26 76 C 38 64, 52 58, 66 52 C 74 48, 82 44, 90 40" stroke="#0B0E13" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <polygon points="92,30 104,40 90,46" fill="#0B0E13"/>
+</svg>
