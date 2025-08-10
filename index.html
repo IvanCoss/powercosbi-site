@@ -1,49 +1,100 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PowerCos BI - Customized Organization Solutions</title>
-<link rel="stylesheet" href="styles.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>PowerCos BI – Dashboards inteligentes para ti</title>
+  <meta name="description" content="PowerCos BI — Customized Organization Solutions. Plantillas y dashboards profesionales de Power BI listos para usar." />
+  <meta property="og:image" content="./assets/brand.webp">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{ --yellow:#F2C811; --dark:#0E1116; --mid:#171B22; --text:#EDEFF3; --muted:#A9AFB9; --shadow:0 10px 28px rgba(0,0,0,.25); }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;background:linear-gradient(180deg,#0c0f14 0%, var(--dark) 100%);color:var(--text);font-family:Poppins,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+    .container{width:min(1320px,92vw);margin:0 auto}
+    header{position:sticky;top:0;background:rgba(14,17,22,.85);backdrop-filter: blur(8px);border-bottom:1px solid rgba(255,255,255,.06);z-index:10}
+    .row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;flex-wrap:wrap}
+    .brand{display:flex;align-items:center;gap:10px}
+    .brand strong{font-size:18px}
+    .hero{padding:34px 0 12px;border-bottom:1px solid rgba(255,255,255,.06)}
+    .wrap{display:grid;grid-template-columns:1fr;gap:18px}
+    .title{font-size:clamp(26px,6vw,48px);line-height:1.15;margin:0 0 8px}
+    .subtitle{font-size:clamp(14px,2.6vw,19px);color:var(--muted);margin:0 0 16px}
+    .actions{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--yellow);color:#111;padding:12px 16px;border-radius:14px;font-weight:700;min-height:44px}
+    .hero-img{border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow)}
+    .grid{display:grid;grid-template-columns:1fr;gap:16px;margin:18px 0 30px}
+    .card{background:var(--mid);border:1px solid rgba(255,255,255,.06);border-radius:18px;box-shadow:var(--shadow);overflow:hidden}
+    .shot{padding:12px 12px 0}
+    .shot img{display:block;width:100%;height:190px;object-fit:cover;border-radius:14px;border:1px solid rgba(255,255,255,.08)}
+    .body{padding:14px}
+    .card h3{margin:0 0 6px;font-size:clamp(16px,3.6vw,18px)}
+    .price{font-size:clamp(18px,4.5vw,22px);font-weight:700;margin:12px 0 2px}
+    .mock{display:none !important;}
+    @media (min-width: 700px){ .wrap{grid-template-columns:1.05fr .95fr} .grid{grid-template-columns:1fr 1fr} }
+    @media (min-width: 1060px){ .grid{grid-template-columns:repeat(3,1fr)} }
+    @media (min-width: 1400px){ .grid{grid-template-columns:repeat(4,1fr)} }
+  </style>
 </head>
 <body>
-<header>
-  <h1>Dashboards inteligentes para ti</h1>
-  <p>Customized Organization Solutions – Soluciones personalizadas para tu organización.</p>
-  <a href="#plantillas">Explorar plantillas</a>
-</header>
+  <header>
+    <div class="container row">
+      <div class="brand"><strong>PowerCos BI</strong><span style="color:#A9AFB9">— Customized Organization Solutions</span></div>
+      <a class="btn" href="#plantillas">Ver plantillas</a>
+    </div>
+  </header>
 
-<main id="plantillas">
-  <section class="cards">
-    <article class="card">
-      <div class="shot"><img src="./assets/sales.webp" alt="Sales Overview preview"></div>
-      <div class="body">
-        <h3>Ventas — Sales Overview</h3>
-        <div class="price">$19 USD</div>
+  <section class="hero">
+    <div class="container wrap">
+      <div>
+        <h2 class="title">Dashboards inteligentes para ti</h2>
+        <p class="subtitle">Customized Organization Solutions – Soluciones personalizadas para tu organización.</p>
+        <div class="actions">
+          <a class="btn" href="#plantillas">Explorar plantillas</a>
+        </div>
       </div>
-    </article>
-    <article class="card">
-      <div class="shot"><img src="./assets/finance.webp" alt="Finance P&L preview"></div>
-      <div class="body">
-        <h3>Finanzas — P&L / Cashflow</h3>
-        <div class="price">$24 USD</div>
+      <div class="hero-img">
+        <img src="./assets/hero.webp" alt="Dashboard mockup">
       </div>
-    </article>
-    <article class="card">
-      <div class="shot"><img src="./assets/customer.webp" alt="Customer 360 preview"></div>
-      <div class="body">
-        <h3>Clientes — Customer 360</h3>
-        <div class="price">$21 USD</div>
-      </div>
-    </article>
-    <article class="card">
-      <div class="shot"><img src="./assets/marketing.webp" alt="Marketing Performance preview"></div>
-      <div class="body">
-        <h3>Marketing — Performance</h3>
-        <div class="price">$21 USD</div>
-      </div>
-    </article>
+    </div>
   </section>
-</main>
+
+  <section id="plantillas" class="section">
+    <div class="container">
+      <div class="grid">
+        <article class="card">
+          <div class="shot"><img src="./assets/sales.webp" alt="Sales Overview preview"></div>
+          <div class="body">
+            <h3>Ventas — Sales Overview</h3>
+            <div class="price">$19 USD</div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="shot"><img src="./assets/finance.webp" alt="Financial Dashboard preview"></div>
+          <div class="body">
+            <h3>Finanzas — P&amp;L / Cashflow</h3>
+            <div class="price">$24 USD</div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="shot"><img src="./assets/customer.webp" alt="Customer 360 preview"></div>
+          <div class="body">
+            <h3>Clientes — Customer 360</h3>
+            <div class="price">$21 USD</div>
+          </div>
+        </article>
+        <article class="card">
+          <div class="shot"><img src="./assets/marketing.webp" alt="Marketing Performance preview"></div>
+          <div class="body">
+            <h3>Marketing — Performance</h3>
+            <div class="price">$21 USD</div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
 </body>
 </html>
