@@ -17,19 +17,24 @@
     header{position:sticky;top:0;background:rgba(14,17,22,.85);backdrop-filter: blur(8px);border-bottom:1px solid rgba(255,255,255,.06);z-index:10}
     .row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;flex-wrap:wrap}
     .brand{display:flex;align-items:center;gap:10px}
-    .brand img{width:40px;height:40px}
+    .logo{height:40px;width:auto}
+    .brand-title{display:flex;flex-direction:column}
     .brand-title h1{font-size:clamp(16px,2.2vw,20px);line-height:1.1;margin:0;font-weight:700}
     .brand-sub{font-size:12px;color:var(--muted);margin-top:2px}
     nav{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
     .link{opacity:.9;padding:10px 12px;border-radius:12px}
     .link:hover{background:#131821}
     .cta{background:var(--yellow);color:#111;padding:12px 16px;border-radius:12px;font-weight:700}
+    .lang{display:inline-flex;gap:6px;border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:6px 10px;font-size:12px;color:var(--muted)}
+    .lang button{background:none;border:0;color:inherit;cursor:pointer;padding:4px 8px;border-radius:10px}
+    .lang button.active{background:rgba(255,255,255,.08);color:#fff}
     .hero{padding:34px 0 12px;border-bottom:1px solid rgba(255,255,255,.06)}
     .wrap{display:grid;grid-template-columns:1fr;gap:18px}
     .title{font-size:clamp(26px,6vw,48px);line-height:1.15;margin:0 0 8px}
     .subtitle{font-size:clamp(14px,2.6vw,19px);color:var(--muted);margin:0 0 16px}
     .actions{display:flex;gap:10px;flex-wrap:wrap}
     .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--yellow);color:#111;padding:12px 16px;border-radius:14px;font-weight:700;min-height:44px}
+    .chip{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:rgba(242,200,17,.14);color:#ffe08a;font-size:12px;font-weight:600}
     .hero-img{background:#0f1114;border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:14px;box-shadow:var(--shadow)}
     .hero-shot{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:14px}
     .section{padding:30px 0}
@@ -42,26 +47,26 @@
     .body{padding:14px}
     .card h3{margin:0 0 6px;font-size:clamp(16px,3.6vw,18px)}
     .price{font-size:clamp(18px,4.5vw,22px);font-weight:700;margin:12px 0 12px}
-    @media (min-width: 700px){ .wrap{grid-template-columns:1.05fr .95fr} .grid{grid-template-columns:1fr 1fr} }
-    @media (min-width: 1060px){ .container{padding:0} .grid{grid-template-columns:repeat(3,1fr)} }
-    @media (min-width: 1400px){ .grid{grid-template-columns:repeat(4,1fr)} }
     footer{border-top:1px solid rgba(255,255,255,.08);padding:22px 0;color:#b7bdc8}
+    /* Laptop/Desktop boost */
+    @media (min-width: 1024px){ .logo{height:52px} .wrap{grid-template-columns: 1.2fr 1fr} .title{font-size:54px} .subtitle{font-size:20px} .hero-img{padding:20px} }
+    @media (min-width: 1200px){ .price{font-size:24px} }
   </style>
 </head>
 <body>
   <header>
     <div class="container row">
-      <a class="brand" href="#">
-        <img src="./assets/logo.svg" alt="PowerCos BI" />
-        <div class="brand-title">
-          <h1>PowerCos BI</h1>
-          <div class="brand-sub">Customized Organization Solutions</div>
-        </div>
+      <a class="brand" href="#"><img class="logo" src="./assets/logo.png" alt="PowerCos BI" />
+        <div class="brand-title"><h1>PowerCos BI</h1><div class="brand-sub" data-i18n="brand.subtitle">Customized Organization Solutions</div></div>
       </a>
       <nav>
-        <a class="link hide-sm" href="#plantillas">Plantillas</a>
-        <a class="link hide-sm" href="#como-funciona">Cómo funciona</a>
-        <a class="cta" href="#plantillas">Ver plantillas</a>
+        <a class="link hide-sm" href="#plantillas" data-i18n="nav.templates">Plantillas</a>
+        <a class="link hide-sm" href="#como-funciona" data-i18n="nav.how">Cómo funciona</a>
+        <a class="cta" href="#plantillas" data-i18n="nav.cta">Ver plantillas</a>
+        <div class="lang" aria-label="language switch">
+          <button id="esBtn" class="active" type="button">ES</button>
+          <button id="enBtn" type="button">EN</button>
+        </div>
       </nav>
     </div>
   </header>
@@ -69,58 +74,117 @@
   <section class="hero">
     <div class="container wrap">
       <div>
-        <h2 class="title">Dashboards inteligentes para ti</h2>
-        <p class="subtitle">Customized Organization Solutions – Soluciones personalizadas para tu organización.</p>
+        <h2 class="title" data-i18n="hero.title">Dashboards inteligentes para ti</h2>
+        <p class="subtitle" data-i18n="hero.subtitle">Customized Organization Solutions – Soluciones personalizadas para tu organización.</p>
         <div class="actions">
-          <a class="btn" href="#plantillas">Explorar plantillas</a>
-          <span class="btn" style="background:rgba(242,200,17,.14);color:#ffe08a">Actualizaciones incluidas</span>
+          <a class="btn" href="#plantillas" data-i18n="hero.btn">Explorar plantillas</a>
+          <span class="chip" data-i18n="hero.badge">Actualizaciones incluidas</span>
         </div>
       </div>
       <div class="hero-img">
-        <img class="hero-shot" src="./assets/hero.webp" alt="Dashboard mockup">
+        <img class="hero-shot" src="./assets/hero.webp" alt="Vista previa del dashboard">
       </div>
     </div>
   </section>
 
   <section id="plantillas" class="section">
     <div class="container">
-      <h2>Plantillas</h2>
-      <p class="lead">Diseñadas para ventas, finanzas, marketing y operaciones. Cada archivo incluye guía rápida de personalización.</p>
+      <h2 data-i18n="catalog.title">Plantillas</h2>
+      <p class="lead" data-i18n="catalog.lead">Diseñadas para ventas, finanzas, marketing y operaciones. Cada archivo incluye guía rápida de personalización.</p>
       <div class="grid">
         <article class="card">
           <div class="shot"><img src="./assets/sales.webp" alt="Sales Overview (preview)"></div>
           <div class="body">
-            <h3>Ventas – Sales Overview</h3>
-            <div class="btn" style="background:rgba(242,200,17,.14);color:#ffe08a">.pbit + guía PDF</div>
+            <h3 data-i18n="cards.sales.title">Ventas – Sales Overview</h3>
+            <div class="chip" data-i18n="cards.sales.meta">.pbit + guía PDF</div>
             <div class="price">$19 USD</div>
           </div>
         </article>
         <article class="card">
-          <div class="shot"><img src="./assets/finance.webp" alt="Finance (preview)"></div>
+          <div class="shot"><img src="./assets/finance.webp" alt="Financial Dashboard (preview)"></div>
           <div class="body">
-            <h3>Finanzas – P&L / Cashflow</h3>
-            <div class="btn" style="background:rgba(242,200,17,.14);color:#ffe08a">.pbit + ejemplo CSV</div>
+            <h3 data-i18n="cards.fin.title">Finanzas – P&L / Cashflow</h3>
+            <div class="chip" data-i18n="cards.fin.meta">.pbit + ejemplo CSV</div>
             <div class="price">$24 USD</div>
           </div>
         </article>
         <article class="card">
           <div class="shot"><img src="./assets/customer.webp" alt="Customer Analysis (preview)"></div>
           <div class="body">
-            <h3>Clientes – Customer 360</h3>
-            <div class="btn" style="background:rgba(242,200,17,.14);color:#ffe08a">Segmentación + RFM</div>
+            <h3 data-i18n="cards.c360.title">Clientes – Customer 360</h3>
+            <div class="chip" data-i18n="cards.c360.meta">Segmentación + RFM</div>
             <div class="price">$21 USD</div>
           </div>
         </article>
         <article class="card">
           <div class="shot"><img src="./assets/marketing.webp" alt="Marketing Performance (preview)"></div>
           <div class="body">
-            <h3>Marketing – Performance</h3>
-            <div class="btn" style="background:rgba(242,200,17,.14);color:#ffe08a">UTM + KPIs</div>
+            <h3 data-i18n="cards.mkt.title">Marketing – Performance</h3>
+            <div class="chip" data-i18n="cards.mkt.meta">UTM + KPIs</div>
             <div class="price">$21 USD</div>
           </div>
         </article>
       </div>
     </div>
   </section>
+
+  <footer>
+    <div class="container row" style="justify-content:space-between">
+      <div class="brand" style="gap:10px">
+        <img class="logo" src="./assets/logo.png" alt="" />
+        <strong>PowerCos BI</strong>
+      </div>
+      <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center">
+        <a href="#" style="color:var(--muted)" data-i18n="footer.terms">Términos</a>
+        <a href="#" style="color:var(--muted)" data-i18n="footer.privacy">Privacidad</a>
+        <span style="color:var(--muted)">© <span id="y"></span> PowerCos BI</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    const dict = {
+      es: {
+        'brand.subtitle':'Customized Organization Solutions',
+        'nav.templates':'Plantillas', 'nav.how':'Cómo funciona', 'nav.cta':'Ver plantillas',
+        'hero.title':'Dashboards inteligentes para ti',
+        'hero.subtitle':'Customized Organization Solutions – Soluciones personalizadas para tu organización.',
+        'hero.btn':'Explorar plantillas', 'hero.badge':'Actualizaciones incluidas',
+        'catalog.title':'Plantillas','catalog.lead':'Diseñadas para ventas, finanzas, marketing y operaciones. Cada archivo incluye guía rápida de personalización.',
+        'cards.sales.title':'Ventas – Sales Overview','cards.sales.meta':'.pbit + guía PDF',
+        'cards.fin.title':'Finanzas – P&L / Cashflow','cards.fin.meta':'.pbit + ejemplo CSV',
+        'cards.c360.title':'Clientes – Customer 360','cards.c360.meta':'Segmentación + RFM',
+        'cards.mkt.title':'Marketing – Performance','cards.mkt.meta':'UTM + KPIs',
+        'footer.terms':'Términos','footer.privacy':'Privacidad'
+      },
+      en: {
+        'brand.subtitle':'Customized Organization Solutions',
+        'nav.templates':'Templates', 'nav.how':'How it works', 'nav.cta':'Browse templates',
+        'hero.title':'Smart dashboards for you',
+        'hero.subtitle':'Customized Organization Solutions – Tailored solutions for your business.',
+        'hero.btn':'Browse templates', 'hero.badge':'Updates included',
+        'catalog.title':'Templates','catalog.lead':'Crafted for Sales, Finance, Marketing and Operations. Each file includes a quick customization guide.',
+        'cards.sales.title':'Sales – Sales Overview','cards.sales.meta':'.pbit + PDF guide',
+        'cards.fin.title':'Finance – P&L / Cashflow','cards.fin.meta':'.pbit + sample CSV',
+        'cards.c360.title':'Customers – Customer 360','cards.c360.meta':'Segmentation + RFM',
+        'cards.mkt.title':'Marketing – Performance','cards.mkt.meta':'UTM + KPIs',
+        'footer.terms':'Terms','footer.privacy':'Privacy'
+      }
+    };
+    const els = document.querySelectorAll('[data-i18n]');
+    function applyLang(lang){
+      els.forEach(el=>{ const k = el.getAttribute('data-i18n'); if(dict[lang][k]) el.innerHTML = dict[lang][k]; });
+      document.documentElement.lang = lang;
+      localStorage.setItem('lang', lang);
+      esBtn.classList.toggle('active', lang==='es');
+      enBtn.classList.toggle('active', lang==='en');
+    }
+    const esBtn = document.getElementById('esBtn');
+    const enBtn = document.getElementById('enBtn');
+    esBtn.addEventListener('click', ()=>applyLang('es'));
+    enBtn.addEventListener('click', ()=>applyLang('en'));
+    applyLang(localStorage.getItem('lang')||'es');
+  </script>
 </body>
 </html>
