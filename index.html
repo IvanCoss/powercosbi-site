@@ -8,7 +8,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
-
   <style>
     :root{
       --yellow:#F2C811; --dark:#0E1116; --mid:#171B22; --text:#EDEFF3; --muted:#A9AFB9;
@@ -23,93 +22,139 @@
       -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
     }
     a{color:inherit;text-decoration:none}
-    img{max-width:100%;height:auto;border:0;display:block}
+    img{max-width:100%;height:auto;border:0}
+    .container{width:min(1220px,92vw);margin:0 auto;padding:0 8px}
 
-    /* ====== Layout ====== */
-    .container{width:min(1560px,94vw);margin:0 auto;padding:0 24px}
-    header{position:sticky;top:0;z-index:10;background:rgba(14,17,22,.85);backdrop-filter:blur(8px);border-bottom:1px solid rgba(255,255,255,.06)}
-    .row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0;flex-wrap:wrap}
+    /* Header */
+    header{
+      position:sticky; top:0; z-index:20;
+      background:rgba(14,17,22,.85); backdrop-filter: blur(8px);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;flex-wrap:wrap}
+    .brand{display:flex;align-items:center;gap:12px;min-height:44px}
+    .logo{
+      width: clamp(48px, 10vw, 56px);
+      height: clamp(48px, 10vw, 56px);
+      border-radius:12px; display:block;
+    }
+    .brand-title{display:flex;flex-direction:column;line-height:1}
+    .brand-title h1{
+      margin:0; font-weight:700;
+      font-size: clamp(18px, 5.2vw, 22px);
+      letter-spacing:.2px;
+    }
+    .brand-sub{font-size:clamp(11px,3.2vw,12px);color:var(--muted);margin-top:4px}
 
-    /* ====== Brand ====== */
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{width:clamp(36px,3.2vw,56px);height:clamp(36px,3.2vw,56px);object-fit:contain}
-    .brand-title{display:flex;flex-direction:column}
-    .brand-title h1{font-size:clamp(16px,2.2vw,20px);line-height:1.1;margin:0;font-weight:700}
-    .brand-sub{font-size:12px;color:var(--muted);margin-top:2px}
-
-    /* ====== Nav ====== */
-    nav{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
-    .link{opacity:.95;padding:10px 12px;border-radius:12px}
+    nav{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+    .link{
+      padding:10px 12px;border-radius:12px;opacity:.95;
+      font-size: clamp(14px, 3.8vw, 14px);
+      line-height:1; min-height:44px; display:flex;align-items:center;
+    }
     .link:hover{background:#131821}
-    .cta{background:var(--yellow);color:#111;padding:12px 16px;border-radius:12px;font-weight:700}
+    .cta{
+      background:var(--yellow); color:#111; font-weight:700;
+      padding:12px 16px; border-radius:12px; line-height:1; min-height:44px; display:flex;align-items:center;
+      font-size: clamp(14px, 3.8vw, 14px);
+    }
     .cta:active{transform:translateY(1px)}
-    .lang{display:inline-flex;gap:6px;border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:6px 10px;font-size:12px;color:var(--muted)}
-    .lang button{background:none;border:0;color:inherit;cursor:pointer;padding:4px 8px;border-radius:10px}
+    .lang{
+      display:inline-flex;gap:6px;align-items:center;
+      border:1px solid rgba(255,255,255,.12); border-radius:999px;
+      padding:6px 10px; color:var(--muted); min-height:44px
+    }
+    .lang button{
+      background:none;border:0;color:inherit;cursor:pointer;
+      padding:8px 10px;border-radius:10px;
+      font-size: clamp(13px, 3.6vw, 13px);
+      line-height:1.1
+    }
     .lang button.active{background:rgba(255,255,255,.08);color:#fff}
 
-    /* ====== Hero ====== */
-    .hero{padding:40px 0 18px;border-bottom:1px solid rgba(255,255,255,.06)}
-    .wrap{display:grid;grid-template-columns:1fr;gap:22px}
-    .title{font-size:clamp(28px,5vw,64px);line-height:1.15;margin:0 0 10px}
-    .subtitle{font-size:clamp(14px,2vw,18px);color:var(--muted);margin:0 0 18px}
-    .actions{display:flex;gap:12px;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--yellow);color:#111;padding:12px 16px;border-radius:14px;font-weight:700;min-height:44px}
-    .chip{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:rgba(242,200,17,.14);color:#ffe08a;font-size:12px;font-weight:600}
-    .hero-img{background:#0f1114;border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:14px;box-shadow:var(--shadow)}
-    .placeholder{aspect-ratio:16/9;border-radius:14px;background:linear-gradient(135deg,#1a1d22,#0f141a);display:grid;place-items:center;color:#8a93a3;font-size:14px;min-height:280px}
-    @media (min-width: 860px){
-      .wrap{grid-template-columns:1.2fr 1fr}
-      .placeholder{min-height:420px}
+    /* Hero */
+    .hero{padding:clamp(20px,6vw,34px) 0 12px;border-bottom:1px solid rgba(255,255,255,.06)}
+    .wrap{display:grid;grid-template-columns:1fr;gap:18px}
+    .title{
+      margin:0 0 10px; line-height:1.1; letter-spacing:.2px;
+      font-size: clamp(28px, 8vw, 48px);
     }
-    @media (min-width: 1200px){
-      .placeholder{min-height:480px}
+    .subtitle{
+      font-size: clamp(15px, 4.4vw, 19px);
+      color:var(--muted); margin:0 0 16px; max-width:72ch
     }
-    @media (min-width: 1440px){
-      .placeholder{min-height:520px}
+    .actions{display:flex;gap:10px;flex-wrap:wrap}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:8px;
+      background:var(--yellow); color:#111; padding:12px 16px; border-radius:14px; font-weight:700;
+      min-height:44px; font-size: clamp(14px, 3.8vw, 14px);
+    }
+    .chip{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:10px 14px;border-radius:999px;background:rgba(242,200,17,.14);
+      color:#ffe08a;font-size: clamp(12px, 3.6vw, 12px); font-weight:600; min-height:40px
+    }
+    .hero-img{
+      background:#0f1114;border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:14px;
+      box-shadow:var(--shadow)
+    }
+    .placeholder{
+      aspect-ratio:16/10;border-radius:14px;background:linear-gradient(135deg,#1a1d22,#0f141a);
+      display:grid;place-items:center;color:#8a93a3;font-size:clamp(13px,3.6vw,14px); text-align:center; padding:10px
     }
 
-    /* ====== Sections / Cards ====== */
-    .section{padding:34px 0}
-    .section h2{font-size:clamp(22px,4.2vw,40px);margin:0 0 10px}
-    .section p.lead{color:var(--muted);max-width:920px;margin:0}
-    .grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:16px}
+    /* Sections */
+    .section{padding:clamp(22px,6.5vw,34px) 0}
+    .section h2{font-size:clamp(22px,6vw,38px);margin:0 0 12px}
+    .section p.lead{color:var(--muted);max-width:880px;margin:0;font-size:clamp(14px,4.2vw,16px)}
+
+    .grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:14px}
     .card{background:var(--mid);border:1px solid rgba(255,255,255,.06);border-radius:18px;box-shadow:var(--shadow);overflow:hidden}
     .shot{padding:12px 12px 0}
-    .mock{aspect-ratio:16/10;background:linear-gradient(145deg,#1c232e,#0f141a);border:1px solid rgba(255,255,255,.08);border-radius:14px;display:grid;place-items:center;color:#8a93a3}
-    .body{padding:16px}
-    .card h3{margin:0 0 8px;font-size:clamp(16px,3.6vw,18px)}
-    .price{font-size:clamp(18px,4.5vw,22px);font-weight:700;margin:12px 0}
-    @media (min-width: 880px){ .grid{grid-template-columns:1fr 1fr} }
-    @media (min-width: 1200px){ .grid{grid-template-columns:repeat(3,1fr)} }
-    @media (min-width: 1480px){ .grid{grid-template-columns:repeat(4,1fr)} }
+    .mock{
+      aspect-ratio:16/10;background:linear-gradient(145deg,#1c232e,#0f141a);
+      border:1px solid rgba(255,255,255,.08);border-radius:14px;display:grid;place-items:center;
+      color:#8a93a3;font-size:clamp(12px,3.6vw,14px);text-align:center;padding:8px
+    }
+    .body{padding:14px}
+    .card h3{margin:0 0 8px;font-size:clamp(15px,4.5vw,18px)}
+    .price{font-size:clamp(18px,5vw,22px);font-weight:700;margin:12px 0 12px}
 
-    /* ====== Steps ====== */
     .steps{display:grid;grid-template-columns:1fr;gap:16px}
     .step{background:var(--mid);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:14px}
-    .n{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:rgba(255,255,255,.06);font-weight:700;margin-bottom:6px}
-    .step p{color:var(--muted);margin:.25rem 0 0}
+    .n{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:rgba(255,255,255,.06);font-weight:700;margin-bottom:8px}
 
     footer{border-top:1px solid rgba(255,255,255,.08);padding:22px 0;color:#b7bdc8}
+
+    /* Tablet / Desktop */
+    @media (min-width: 700px){
+      .wrap{grid-template-columns:1.05fr .95fr}
+      .grid{grid-template-columns:1fr 1fr}
+      .steps{grid-template-columns:repeat(3,1fr)}
+    }
+    @media (min-width: 1060px){
+      .container{padding:0}
+      .grid{grid-template-columns:repeat(3,1fr)}
+    }
+    @media (min-width: 1400px){
+      .grid{grid-template-columns:repeat(4,1fr)}
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="container row">
-      <!-- LOGO: usa brand.webp en la misma carpeta -->
       <a class="brand" href="#">
-        <picture>
-          <source srcset="brand.webp" type="image/webp" />
-          <img class="logo" src="brand.webp" alt="PowerCos BI" width="56" height="56" />
-        </picture>
+        <!-- Tu logo original -->
+        <img src="brand.webp" width="56" height="56" alt="PowerCos BI logo" class="logo" />
         <div class="brand-title">
           <h1>PowerCos BI</h1>
           <div class="brand-sub" data-i18n="brand.subtitle">Customized Organization Solutions</div>
         </div>
       </a>
-
       <nav>
-        <a class="link" href="#plantillas" data-i18n="nav.templates">Plantillas</a>
-        <a class="link" href="#como-funciona" data-i18n="nav.how">Cómo funciona</a>
+        <a class="link hide-sm" href="#plantillas" data-i18n="nav.templates">Plantillas</a>
+        <a class="link hide-sm" href="#como-funciona" data-i18n="nav.how">Cómo funciona</a>
         <a class="cta" href="#plantillas" data-i18n="nav.cta">Ver plantillas</a>
         <div class="lang" aria-label="language switch">
           <button id="esBtn" class="active" type="button">ES</button>
@@ -129,7 +174,6 @@
           <span class="chip" data-i18n="hero.badge">Actualizaciones incluidas</span>
         </div>
       </div>
-
       <div class="hero-img">
         <div class="placeholder" data-i18n="hero.mock">(Aquí va tu mockup de dashboard)</div>
       </div>
@@ -140,7 +184,6 @@
     <div class="container">
       <h2 data-i18n="catalog.title">Plantillas</h2>
       <p class="lead" data-i18n="catalog.lead">Diseñadas para ventas, finanzas, marketing y operaciones. Cada archivo incluye guía rápida de personalización.</p>
-
       <div class="grid">
         <article class="card">
           <div class="shot"><div class="mock" data-i18n="cards.sales.preview">Sales Overview (preview)</div></div>
@@ -151,7 +194,6 @@
             <a class="btn" href="https://www.paypal.me/ivancoss07/19USD" target="_blank" rel="noopener" data-i18n="cards.buy">Comprar ahora</a>
           </div>
         </article>
-
         <article class="card">
           <div class="shot"><div class="mock" data-i18n="cards.fin.preview">Financial Dashboard (preview)</div></div>
           <div class="body">
@@ -161,7 +203,6 @@
             <a class="btn" href="https://www.paypal.me/ivancoss07/24USD" target="_blank" rel="noopener" data-i18n="cards.buy">Comprar ahora</a>
           </div>
         </article>
-
         <article class="card">
           <div class="shot"><div class="mock" data-i18n="cards.c360.preview">Customer Analysis (preview)</div></div>
           <div class="body">
@@ -171,7 +212,6 @@
             <a class="btn" href="https://www.paypal.me/ivancoss07/21USD" target="_blank" rel="noopener" data-i18n="cards.buy">Comprar ahora</a>
           </div>
         </article>
-
         <article class="card">
           <div class="shot"><div class="mock" data-i18n="cards.mkt.preview">Marketing Performance (preview)</div></div>
           <div class="body">
@@ -247,7 +287,7 @@
   <footer>
     <div class="container row" style="justify-content:space-between">
       <div class="brand" style="gap:10px">
-        <img class="logo" src="brand.webp" alt="" width="40" height="40" />
+        <img src="brand.webp" width="56" height="56" alt="" class="logo" />
         <strong>PowerCos BI</strong>
       </div>
       <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center">
@@ -259,10 +299,7 @@
   </footer>
 
   <script>
-    // Año en footer
     document.getElementById('y').textContent = new Date().getFullYear();
-
-    // Diccionario i18n
     const dict = {
       es: {
         'brand.subtitle':'Customized Organization Solutions',
@@ -299,21 +336,16 @@
         'footer.terms':'Terms','footer.privacy':'Privacy'
       }
     };
-
     const els = document.querySelectorAll('[data-i18n]');
-    const esBtn = document.getElementById('esBtn');
-    const enBtn = document.getElementById('enBtn');
-
     function applyLang(lang){
-      els.forEach(el=>{
-        const k = el.getAttribute('data-i18n');
-        if(dict[lang][k]) el.innerHTML = dict[lang][k];
-      });
+      els.forEach(el=>{ const k = el.getAttribute('data-i18n'); if(dict[lang][k]) el.innerHTML = dict[lang][k]; });
       document.documentElement.lang = lang;
       localStorage.setItem('lang', lang);
       esBtn.classList.toggle('active', lang==='es');
       enBtn.classList.toggle('active', lang==='en');
     }
+    const esBtn = document.getElementById('esBtn');
+    const enBtn = document.getElementById('enBtn');
     esBtn.addEventListener('click', ()=>applyLang('es'));
     enBtn.addEventListener('click', ()=>applyLang('en'));
     applyLang(localStorage.getItem('lang')||'es');
