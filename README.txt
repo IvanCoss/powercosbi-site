@@ -1,16 +1,17 @@
-# PowerCos BI – Landing
-Sitio estático listo para publicar en **Vercel**.
+# PowerCos BI - Sitio bilingüe
 
-## Contenido
-- `index.html` (incluye logo SVG, estilos y secciones: Portada, Catálogo, Cómo funciona, Footer).
+Este paquete contiene:
+- index.html (página principal)
+- gracias.html (página de agradecimiento)
+- Selector de idioma ES/EN en ambas páginas
+- Subtítulo fijo: "COS = Customized Organization Solutions"
 
-## Publicar en Vercel
-1. Crea un repo `powercosbi-site` en GitHub.
-2. Sube `index.html` (o arrastra este ZIP y extrae).
-3. En Vercel → **Add New Project** → importa tu repo → **Deploy**.
+## Cómo subir a GitHub y Vercel
 
-## Dominio
-Apunta `powercosbi.com` a Vercel desde tu registrador con CNAME a `cname.vercel-dns.com`.
+1. Ve a tu repositorio en GitHub.
+2. Haz clic en "Add file" → "Upload files".
+3. Arrastra `index.html` y `gracias.html`.
+4. Haz clic en "Commit changes".
+5. Vercel detectará el cambio y actualizará tu dominio.
 
-## Pagos
-Reemplaza los enlaces `href` de los botones por tu **PayPal** o **Stripe Payment Link**.
+Listo, tu sitio tendrá selector de idioma y el subtítulo en ambas páginas.

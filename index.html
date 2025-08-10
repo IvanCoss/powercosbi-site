@@ -1,258 +1,53 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>PowerCos BI – Dashboards inteligentes para ti</title>
-  <meta name="description" content="Plantillas profesionales de Power BI listas para usar. PowerCos BI – Dashboards inteligentes para ti." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PowerCos BI</title>
   <style>
-    :root{
-      --yellow:#F2C811;
-      --dark:#0E1116;
-      --mid:#171B22;
-      --text:#EDEFF3;
-      --muted:#A9AFB9;
-      --radius:18px;
-      --shadow:0 10px 28px rgba(0,0,0,.25);
-    }
-    /* Base mobile-first */
-    *{box-sizing:border-box}
-    html,body{height:100%}
-    body{margin:0;background:linear-gradient(180deg,#0c0f14 0%, var(--dark) 100%);color:var(--text);font-family:Poppins,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;}
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;height:auto;border:0}
-    .container{width:min(1320px,92vw);margin:0 auto;padding:0 6px}
-
-    /* Header */
-    header{position:sticky;top:0;background:rgba(14,17,22,.85);backdrop-filter: blur(8px);border-bottom:1px solid rgba(255,255,255,.06);z-index:10}
-    .row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;flex-wrap:wrap}
-    .brand{display:flex;align-items:center;gap:10px}
-    .logo{width:40px;height:40px;flex:0 0 auto}
-    .brand h1{font-size:clamp(16px,2.2vw,20px);line-height:1.1;margin:0;font-weight:700}
-    nav{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-    .link{opacity:.9;padding:10px 12px;border-radius:12px}
-    .link:hover{background:#131821}
-    .cta{background:var(--yellow);color:#111;padding:12px 16px;border-radius:12px;font-weight:700}
-    .cta:active{transform:translateY(1px)}
-
-    /* Oculta enlaces secundarios en pantallas muy pequeñas */
-    @media (max-width: 420px){
-      .hide-sm{display:none}
-      .cta{width:100%;text-align:center}
-    }
-
-    /* Hero */
-    .hero{padding:34px 0 12px;border-bottom:1px solid rgba(255,255,255,.06)}
-    .wrap{display:grid;grid-template-columns:1fr;gap:18px}
-    .title{font-size:clamp(26px,6vw,48px);line-height:1.15;margin:0 0 8px}
-    .subtitle{font-size:clamp(14px,2.6vw,19px);color:var(--muted);margin:0 0 16px}
-    .actions{display:flex;gap:10px;flex-wrap:wrap}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--yellow);color:#111;padding:12px 16px;border-radius:14px;font-weight:700;min-height:44px}
-    .chip{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:rgba(242,200,17,.14);color:#ffe08a;font-size:12px;font-weight:600}
-    .hero-img{background:#0f1114;border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:14px;box-shadow:var(--shadow)}
-    .placeholder{aspect-ratio:16/10;border-radius:14px;background:linear-gradient(135deg,#1a1d22,#0f141a);display:grid;place-items:center;color:#8a93a3;font-size:14px}
-
-    /* Sections */
-    .section{padding:30px 0}
-    .section h2{font-size:clamp(22px,5vw,38px);margin:0 0 10px}
-    .section p.lead{color:var(--muted);max-width:880px;margin:0}
-
-    /* Cards grid (responsive) */
-    .grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:14px}
-    .card{background:var(--mid);border:1px solid rgba(255,255,255,.06);border-radius:18px;box-shadow:var(--shadow);overflow:hidden}
-    .shot{padding:12px 12px 0}
-    .mock{aspect-ratio:16/10;background:linear-gradient(145deg,#1c232e,#0f141a);border:1px solid rgba(255,255,255,.08);border-radius:14px;display:grid;place-items:center;color:#8a93a3}
-    .body{padding:14px}
-    .card h3{margin:0 0 6px;font-size:clamp(16px,3.6vw,18px)}
-    .price{font-size:clamp(18px,4.5vw,22px);font-weight:700;margin:12px 0 12px}
-
-    /* Steps */
-    .steps{display:grid;grid-template-columns:1fr;gap:16px}
-    .step{background:var(--mid);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:14px}
-    .n{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:rgba(255,255,255,.06);font-weight:700;margin-bottom:6px}
-    .step p{color:var(--muted);margin:.25rem 0 0}
-
-    /* Tablet */
-    @media (min-width: 700px){
-      .wrap{grid-template-columns:1.05fr .95fr}
-      .grid{grid-template-columns:1fr 1fr}
-      .steps{grid-template-columns:repeat(3,1fr)}
-    }
-    /* Desktop amplio */
-    @media (min-width: 1060px){
-      .container{padding:0}
-      .grid{grid-template-columns:repeat(3,1fr)}
-    }
-    @media (min-width: 1400px){
-      .grid{grid-template-columns:repeat(4,1fr)}
-    }
+    body { font-family: Arial, sans-serif; margin:0; padding:0; }
+    header { background:#111; color:#fff; padding:10px 20px; display:flex; justify-content:space-between; align-items:center; }
+    header h1 { margin:0; font-size:1.5em; }
+    header h2 { margin:0; font-size:0.9em; font-weight:normal; }
+    nav a { color:#fff; margin-left:15px; text-decoration:none; }
+    section { padding:20px; max-width:900px; margin:auto; }
+    footer { background:#111; color:#fff; padding:10px; text-align:center; font-size:0.9em; }
+    .lang-switch { cursor:pointer; }
   </style>
 </head>
 <body>
-  <!-- Header -->
   <header>
-    <div class="container row">
-      <a class="brand" href="#">
-        <!-- LOGO SVG con flecha -->
-        <svg class="logo" viewBox="0 0 100 100" aria-label="PowerCos BI logo" role="img">
-          <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F6D33B"/><stop offset="1" stop-color="#F2C811"/></linearGradient></defs>
-          <path fill="url(#g)" d="M50 5 92 30v40L50 95 8 70V30z"/>
-          <g transform="translate(24,28)">
-            <rect x="4" y="32" width="8" height="18" rx="2" fill="#111"/>
-            <rect x="22" y="24" width="8" height="26" rx="2" fill="#111"/>
-            <rect x="40" y="16" width="8" height="34" rx="2" fill="#111"/>
-            <path d="M2 26 C10 18, 24 12, 40 10" stroke="#111" stroke-width="4" fill="none" stroke-linecap="round"/>
-            <path d="M40 4 l10 6 -10 6" fill="#111"/>
-          </g>
-        </svg>
-        <h1>PowerCos BI</h1>
-      </a>
-      <nav>
-        <a class="link hide-sm" href="#plantillas">Plantillas</a>
-        <a class="link hide-sm" href="#como-funciona">Cómo funciona</a>
-        <a class="cta" href="#plantillas">Ver plantillas</a>
-      </nav>
+    <div>
+      <h1>PowerCos BI</h1>
+      <h2 id="subtitle">COS = Customized Organization Solutions – Soluciones personalizadas para tu organización.</h2>
+    </div>
+    <div class="lang-switch">
+      <span onclick="setLang('es')">ES</span> | <span onclick="setLang('en')">EN</span>
     </div>
   </header>
-
-  <!-- Hero -->
-  <section class="hero">
-    <div class="container wrap">
-      <div>
-        <h2 class="title">Dashboards inteligentes para ti</h2>
-        <p class="subtitle">Plantillas de Power BI listas para conectar a tus datos. Ahorra tiempo, luce profesional y toma decisiones más rápido.</p>
-        <div class="actions">
-          <a class="btn" href="#plantillas">Explorar plantillas</a>
-          <span class="chip">Actualizaciones incluidas</span>
-        </div>
-      </div>
-      <div class="hero-img">
-        <div class="placeholder">(Aquí va tu mockup de dashboard)</div>
-      </div>
-    </div>
+  <section>
+    <h2 id="focus-title">Nuestro enfoque</h2>
+    <p id="focus-text">Ofrecemos soluciones personalizadas para organizar y optimizar tu operación — dashboards, plantillas y soporte a la medida de tu negocio.</p>
   </section>
-
-  <!-- Catálogo -->
-  <section id="plantillas" class="section">
-    <div class="container">
-      <h2>Plantillas</h2>
-      <p class="lead">Diseñadas para ventas, finanzas, marketing y operaciones. Cada archivo incluye guía rápida de personalización.</p>
-      <div class="grid">
-        <article class="card">
-          <div class="shot"><div class="mock">Sales Overview (preview)</div></div>
-          <div class="body">
-            <h3>Ventas – Sales Overview</h3>
-            <div class="chip">.pbit + guía PDF</div>
-            <div class="price">$19 USD</div>
-            <a class="btn" href="https://www.paypal.me/ivancoss07/19USD" target="_blank" rel="noopener" data-sku="sales-overview">Comprar ahora</a>
-          </div>
-        </article>
-        <article class="card">
-          <div class="shot"><div class="mock">Financial Dashboard (preview)</div></div>
-          <div class="body">
-            <h3>Finanzas – P&L / Cashflow</h3>
-            <div class="chip">.pbit + ejemplo CSV</div>
-            <div class="price">$24 USD</div>
-            <a class="btn" href="https://www.paypal.me/ivancoss07/24USD" target="_blank" rel="noopener" data-sku="finance">Comprar ahora</a>
-          </div>
-        </article>
-        <article class="card">
-          <div class="shot"><div class="mock">Customer Analysis (preview)</div></div>
-          <div class="body">
-            <h3>Clientes – Customer 360</h3>
-            <div class="chip">Segmentación + RFM</div>
-            <div class="price">$21 USD</div>
-            <a class="btn" href="https://www.paypal.me/ivancoss07/21USD" target="_blank" rel="noopener" data-sku="customer-360">Comprar ahora</a>
-          </div>
-        </article>
-        <article class="card">
-          <div class="shot"><div class="mock">Marketing Performance (preview)</div></div>
-          <div class="body">
-            <h3>Marketing – Performance</h3>
-            <div class="chip">UTM + KPIs</div>
-            <div class="price">$21 USD</div>
-            <a class="btn" href="https://www.paypal.me/ivancoss07/21USD" target="_blank" rel="noopener" data-sku="marketing">Comprar ahora</a>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Cómo funciona -->
-  <section id="como-funciona" class="section">
-    <div class="container">
-      <h2>Cómo funciona</h2>
-      <div class="steps">
-        <div class="step">
-          <div class="n">1</div>
-          <h3>Explora plantillas</h3>
-          <p>Navega el catálogo y elige el dashboard que necesitas.</p>
-        </div>
-        <div class="step">
-          <div class="n">2</div>
-          <h3>Compra segura</h3>
-          <p>Paga con Stripe o PayPal. Recibes el enlace de descarga al instante.</p>
-        </div>
-        <div class="step">
-          <div class="n">3</div>
-          <h3>Conecta tus datos</h3>
-          <p>Abre el .pbit en Power BI, cambia origen de datos y listo.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contacto / Soporte -->
-  <section id="contacto" class="section">
-    <div class="container">
-      <h2>Contacto y soporte</h2>
-      <p class="lead">¿Dudas sobre una plantilla o tu compra? Escríbeme y te respondo en breve.</p>
-      <div class="card" style="margin-top:14px">
-        <div class="body">
-          <form action="https://formsubmit.co/ivanhcoss@icloud.com" method="POST" style="display:grid;gap:12px">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_next" value="https://powercosbi.com/gracias.html">
-            <label>
-              <span style="display:block;margin-bottom:6px;color:var(--muted)">Nombre</span>
-              <input name="nombre" required placeholder="Tu nombre" style="width:100%;padding:12px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.14);background:#0f1114;color:var(--text)" />
-            </label>
-            <label>
-              <span style="display:block;margin-bottom:6px;color:var(--muted)">Correo</span>
-              <input type="email" name="correo" required placeholder="tucorreo@dominio.com" style="width:100%;padding:12px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.14);background:#0f1114;color:var(--text)" />
-            </label>
-            <label>
-              <span style="display:block;margin-bottom:6px;color:var(--muted)">Mensaje</span>
-              <textarea name="mensaje" rows="5" required placeholder="Cuéntame qué necesitas" style="width:100%;padding:12px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.14);background:#0f1114;color:var(--text)"></textarea>
-            </label>
-            <button class="btn" type="submit">Enviar mensaje</button>
-            <div style="color:var(--muted);font-size:14px">También puedes escribirme directo a <a href="mailto:ivanhcoss@icloud.com" style="text-decoration:underline">ivanhcoss@icloud.com</a>.</div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="container row" style="justify-content:space-between">
-      <div class="brand" style="gap:10px">
-        <svg class="logo" viewBox="0 0 100 100" aria-hidden="true"><path fill="#F2C811" d="M50 5 92 30v40L50 95 8 70V30z"/><g transform="translate(24,28)"><rect x="4" y="32" width="8" height="18" rx="2" fill="#111"/><rect x="22" y="24" width="8" height="26" rx="2" fill="#111"/><rect x="40" y="16" width="8" height="34" rx="2" fill="#111"/><path d="M2 26 C10 18, 24 12, 40 10" stroke="#111" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M40 4 l10 6 -10 6" fill="#111"/></g></svg>
-        <strong>PowerCos BI</strong>
-      </div>
-      <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center">
-        <a href="#" style="color:var(--muted)">Términos</a>
-        <a href="#" style="color:var(--muted)">Privacidad</a>
-        <span style="color:var(--muted)">© <span id="y"></span> PowerCos BI</span>
-      </div>
-    </div>
-  </footer>
-
+  <footer>© 2025 PowerCos BI</footer>
   <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
+    const dict = {
+      es: {
+        subtitle: "COS = Customized Organization Solutions – Soluciones personalizadas para tu organización.",
+        focusTitle: "Nuestro enfoque",
+        focusText: "Ofrecemos soluciones personalizadas para organizar y optimizar tu operación — dashboards, plantillas y soporte a la medida de tu negocio."
+      },
+      en: {
+        subtitle: "COS = Customized Organization Solutions – Tailored solutions for your business.",
+        focusTitle: "Our focus",
+        focusText: "We deliver customized solutions to organize and optimize your operations — dashboards, templates, and support tailored to your business."
+      }
+    };
+    function setLang(lang) {
+      document.getElementById('subtitle').innerText = dict[lang].subtitle;
+      document.getElementById('focus-title').innerText = dict[lang].focusTitle;
+      document.getElementById('focus-text').innerText = dict[lang].focusText;
+    }
   </script>
 </body>
 </html>
-
