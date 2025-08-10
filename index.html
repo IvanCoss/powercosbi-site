@@ -4,7 +4,10 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>PowerCos BI – Dashboards inteligentes para ti</title>
-  <meta name="description" content="PowerCos BI — Customized Organization Solutions. Plantillas profesionales de Power BI listas para usar." />
+  <meta name="description" content="PowerCos BI — Customized Organization Solutions. Plantillas y dashboards profesionales de Power BI listos para usar." />
+  <meta property="og:title" content="PowerCos BI">
+  <meta property="og:description" content="Customized Organization Solutions – Soluciones personalizadas para tu organización.">
+  <meta property="og:image" content="/assets/brand.webp">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -27,7 +30,6 @@
     .link{opacity:.9;padding:10px 12px;border-radius:12px}
     .link:hover{background:#131821}
     .cta{background:var(--yellow);color:#111;padding:12px 16px;border-radius:12px;font-weight:700}
-    .cta:active{transform:translateY(1px)}
     .lang{display:inline-flex;gap:6px;border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:6px 10px;font-size:12px;color:var(--muted)}
     .lang button{background:none;border:0;color:inherit;cursor:pointer;padding:4px 8px;border-radius:10px}
     .lang button.active{background:rgba(255,255,255,.08);color:#fff}
@@ -38,16 +40,13 @@
     .subtitle{font-size:clamp(14px,2.6vw,19px);color:var(--muted);margin:0 0 16px}
     .actions{display:flex;gap:10px;flex-wrap:wrap}
     .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--yellow);color:#111;padding:12px 16px;border-radius:14px;font-weight:700;min-height:44px}
-    .chip{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:rgba(242,200,17,.14);color:#ffe08a;font-size:12px;font-weight:600}
-    .hero-img{background:#0f1114;border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:14px;box-shadow:var(--shadow)}
-    .placeholder{aspect-ratio:16/10;border-radius:14px;background:linear-gradient(135deg,#1a1d22,#0f141a);display:grid;place-items:center;color:#8a93a3;font-size:14px}
+    .hero-img{border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.08);box-shadow:var(--shadow)}
     .section{padding:30px 0}
     .section h2{font-size:clamp(22px,5vw,38px);margin:0 0 10px}
     .section p.lead{color:var(--muted);max-width:880px;margin:0}
     .grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:14px}
     .card{background:var(--mid);border:1px solid rgba(255,255,255,.06);border-radius:18px;box-shadow:var(--shadow);overflow:hidden}
     .shot{padding:12px 12px 0}
-    .mock{aspect-ratio:16/10;background:linear-gradient(145deg,#1c232e,#0f141a);border:1px solid rgba(255,255,255,.08);border-radius:14px;display:grid;place-items:center;color:#8a93a3}
     .body{padding:14px}
     .card h3{margin:0 0 6px;font-size:clamp(16px,3.6vw,18px)}
     .price{font-size:clamp(18px,4.5vw,22px);font-weight:700;margin:12px 0 12px}
@@ -65,17 +64,7 @@
   <header>
     <div class="container row">
       <a class="brand" href="#">
-        <svg class="logo" viewBox="0 0 100 100" aria-label="PowerCos BI logo" role="img">
-          <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#F6D33B"/><stop offset="1" stop-color="#F2C811"/></linearGradient></defs>
-          <path fill="url(#g)" d="M50 5 92 30v40L50 95 8 70V30z"/>
-          <g transform="translate(24,28)">
-            <rect x="4" y="32" width="8" height="18" rx="2" fill="#111"/>
-            <rect x="22" y="24" width="8" height="26" rx="2" fill="#111"/>
-            <rect x="40" y="16" width="8" height="34" rx="2" fill="#111"/>
-            <path d="M2 26 C10 18, 24 12, 40 10" stroke="#111" stroke-width="4" fill="none" stroke-linecap="round"/>
-            <path d="M40 4 l10 6 -10 6" fill="#111"/>
-          </g>
-        </svg>
+        <svg class="logo" viewBox="0 0 100 100" aria-hidden="true"><path fill="#F2C811" d="M50 5 92 30v40L50 95 8 70V30z"/><g transform="translate(24,28)"><rect x="4" y="32" width="8" height="18" rx="2" fill="#111"/><rect x="22" y="24" width="8" height="26" rx="2" fill="#111"/><rect x="40" y="16" width="8" height="34" rx="2" fill="#111"/><path d="M2 26 C10 18, 24 12, 40 10" stroke="#111" stroke-width="4" fill="none" stroke-linecap="round"/><path d="M40 4 l10 6 -10 6" fill="#111"/></g></svg>
         <div class="brand-title">
           <h1>PowerCos BI</h1>
           <div class="brand-sub" data-i18n="brand.subtitle">Customized Organization Solutions</div>
@@ -104,7 +93,7 @@
         </div>
       </div>
       <div class="hero-img">
-        <div class="placeholder" data-i18n="hero.mock">(Aquí va tu mockup de dashboard)</div>
+        <img src="./assets/hero.webp" alt="Dashboard mockup">
       </div>
     </div>
   </section>
@@ -115,7 +104,7 @@
       <p class="lead" data-i18n="catalog.lead">Diseñadas para ventas, finanzas, marketing y operaciones. Cada archivo incluye guía rápida de personalización.</p>
       <div class="grid">
         <article class="card">
-          <div class="shot"><div class="mock" data-i18n="cards.sales.preview">Sales Overview (preview)</div></div>
+          <div class="shot"><img src="./assets/sales.webp" alt="Sales Overview preview" style="border-radius:14px;border:1px solid rgba(255,255,255,.08)"></div>
           <div class="body">
             <h3 data-i18n="cards.sales.title">Ventas – Sales Overview</h3>
             <div class="chip" data-i18n="cards.sales.meta">.pbit + guía PDF</div>
@@ -124,7 +113,7 @@
           </div>
         </article>
         <article class="card">
-          <div class="shot"><div class="mock" data-i18n="cards.fin.preview">Financial Dashboard (preview)</div></div>
+          <div class="shot"><img src="./assets/finance.webp" alt="Financial Dashboard preview" style="border-radius:14px;border:1px solid rgba(255,255,255,.08)"></div>
           <div class="body">
             <h3 data-i18n="cards.fin.title">Finanzas – P&L / Cashflow</h3>
             <div class="chip" data-i18n="cards.fin.meta">.pbit + ejemplo CSV</div>
@@ -133,7 +122,7 @@
           </div>
         </article>
         <article class="card">
-          <div class="shot"><div class="mock" data-i18n="cards.c360.preview">Customer Analysis (preview)</div></div>
+          <div class="shot"><img src="./assets/customer.webp" alt="Customer 360 preview" style="border-radius:14px;border:1px solid rgba(255,255,255,.08)"></div>
           <div class="body">
             <h3 data-i18n="cards.c360.title">Clientes – Customer 360</h3>
             <div class="chip" data-i18n="cards.c360.meta">Segmentación + RFM</div>
@@ -142,7 +131,7 @@
           </div>
         </article>
         <article class="card">
-          <div class="shot"><div class="mock" data-i18n="cards.mkt.preview">Marketing Performance (preview)</div></div>
+          <div class="shot"><img src="./assets/marketing.webp" alt="Marketing Performance preview" style="border-radius:14px;border:1px solid rgba(255,255,255,.08)"></div>
           <div class="body">
             <h3 data-i18n="cards.mkt.title">Marketing – Performance</h3>
             <div class="chip" data-i18n="cards.mkt.meta">UTM + KPIs</div>
@@ -235,13 +224,13 @@
         'nav.templates':'Plantillas', 'nav.how':'Cómo funciona', 'nav.cta':'Ver plantillas',
         'hero.title':'Dashboards inteligentes para ti',
         'hero.subtitle':'Customized Organization Solutions – Soluciones personalizadas para tu organización.',
-        'hero.btn':'Explorar plantillas', 'hero.badge':'Actualizaciones incluidas', 'hero.mock':'(Aquí va tu mockup de dashboard)',
+        'hero.btn':'Explorar plantillas', 'hero.badge':'Actualizaciones incluidas',
         'about.title':'Nuestro enfoque', 'about.copy':'Ofrecemos soluciones personalizadas para organizar y optimizar tu operación — dashboards, plantillas y soporte a la medida de tu negocio.',
         'catalog.title':'Plantillas','catalog.lead':'Diseñadas para ventas, finanzas, marketing y operaciones. Cada archivo incluye guía rápida de personalización.',
-        'cards.sales.preview':'Sales Overview (preview)','cards.sales.title':'Ventas – Sales Overview','cards.sales.meta':'.pbit + guía PDF',
-        'cards.fin.preview':'Financial Dashboard (preview)','cards.fin.title':'Finanzas – P&L / Cashflow','cards.fin.meta':'.pbit + ejemplo CSV',
-        'cards.c360.preview':'Customer Analysis (preview)','cards.c360.title':'Clientes – Customer 360','cards.c360.meta':'Segmentación + RFM',
-        'cards.mkt.preview':'Marketing Performance (preview)','cards.mkt.title':'Marketing – Performance','cards.mkt.meta':'UTM + KPIs',
+        'cards.sales.title':'Ventas – Sales Overview','cards.sales.meta':'.pbit + guía PDF',
+        'cards.fin.title':'Finanzas – P&L / Cashflow','cards.fin.meta':'.pbit + ejemplo CSV',
+        'cards.c360.title':'Clientes – Customer 360','cards.c360.meta':'Segmentación + RFM',
+        'cards.mkt.title':'Marketing – Performance','cards.mkt.meta':'UTM + KPIs',
         'cards.buy':'Comprar ahora',
         'how.title':'Cómo funciona','how.s1.t':'Explora plantillas','how.s1.d':'Navega el catálogo y elige el dashboard que necesitas.','how.s2.t':'Compra segura','how.s2.d':'Paga con Stripe o PayPal. Recibes el enlace de descarga al instante.','how.s3.t':'Conecta tus datos','how.s3.d':'Abre el .pbit en Power BI, cambia origen de datos y listo.',
         'contact.title':'Contacto y soporte','contact.lead':'¿Dudas sobre una plantilla o tu compra? Escríbeme y te respondo en breve.','contact.name':'Nombre','contact.email':'Correo','contact.msg':'Mensaje','contact.send':'Enviar mensaje','contact.alt':'También puedes escribirme directo a <a href="mailto:ivanhcoss@icloud.com" style="text-decoration:underline">ivanhcoss@icloud.com</a>.',
@@ -252,16 +241,16 @@
         'nav.templates':'Templates', 'nav.how':'How it works', 'nav.cta':'Browse templates',
         'hero.title':'Smart dashboards for you',
         'hero.subtitle':'Customized Organization Solutions – Tailored solutions for your business.',
-        'hero.btn':'Browse templates', 'hero.badge':'Updates included', 'hero.mock':'(Put your dashboard mockup here)',
+        'hero.btn':'Browse templates', 'hero.badge':'Updates included',
         'about.title':'Our focus', 'about.copy':'We deliver customized solutions to organize and optimize your operations — dashboards, templates, and support tailored to your business.',
         'catalog.title':'Templates','catalog.lead':'Crafted for Sales, Finance, Marketing and Operations. Each file includes a quick customization guide.',
-        'cards.sales.preview':'Sales Overview (preview)','cards.sales.title':'Sales – Sales Overview','cards.sales.meta':'.pbit + PDF guide',
-        'cards.fin.preview':'Financial Dashboard (preview)','cards.fin.title':'Finance – P&L / Cashflow','cards.fin.meta':'.pbit + sample CSV',
-        'cards.c360.preview':'Customer Analysis (preview)','cards.c360.title':'Customers – Customer 360','cards.c360.meta':'Segmentation + RFM',
-        'cards.mkt.preview':'Marketing Performance (preview)','cards.mkt.title':'Marketing – Performance','cards.mkt.meta':'UTM + KPIs',
+        'cards.sales.title':'Sales – Sales Overview','cards.sales.meta':'.pbit + PDF guide',
+        'cards.fin.title':'Finance – P&L / Cashflow','cards.fin.meta':'.pbit + sample CSV',
+        'cards.c360.title':'Customers – Customer 360','cards.c360.meta':'Segmentation + RFM',
+        'cards.mkt.title':'Marketing – Performance','cards.mkt.meta':'UTM + KPIs',
         'cards.buy':'Buy now',
         'how.title':'How it works','how.s1.t':'Browse templates','how.s1.d':'Explore the catalog and pick the dashboard you need.','how.s2.t':'Secure purchase','how.s2.d':'Pay with Stripe or PayPal. Get the download link instantly.','how.s3.t':'Connect your data','how.s3.d':'Open the .pbit in Power BI, update data sources and go.',
-        'contact.title':'Contact & support','contact.lead':'Questions about a template or your purchase? Write me and I’ll get back to you shortly.','contact.name':'Name','contact.email':'Email','contact.msg':'Message','contact.send':'Send message','contact.alt':'You can also email me at <a href="mailto:ivanhcoss@icloud.com" style="text-decoration:underline">ivanhcoss@icloud.com</a>.',
+        'contact.title':'Contact & support','contact.lead':'Questions about a template or your purchase? Write me and I’ll get back to you shortly.','contact.name':'Name','contact.email':'Email','contact.msg':'Message','contact.send':'Send message','contact.alt':'You can also email me at <a href="mailto:ivanhcoss@icloud.com" style="text-decoration:underline">ivanhcoss@icloud.com</a>.' ,
         'footer.terms':'Terms','footer.privacy':'Privacy'
       }
     };

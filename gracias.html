@@ -35,10 +35,6 @@
           <span class="brand-sub">Customized Organization Solutions</span>
         </div>
       </div>
-      <div class="lang" aria-label="language switch">
-        <button id="esBtn" class="active" type="button">ES</button>
-        <button id="enBtn" type="button">EN</button>
-      </div>
     </div>
     <div class="card">
       <h1 data-i18n="title">¡Gracias por tu compra!</h1>
@@ -53,10 +49,8 @@
       en:{title:'Thank you for your purchase!',p1:'Your template is on its way to your email. Reminder: we deliver <em>Customized Organization Solutions</em> to take your data to the next level.',p2:'If you don’t see the email, check your spam folder or write me directly at <a href="mailto:ivanhcoss@icloud.com">ivanhcoss@icloud.com</a>.',btn:'Back to home'}
     };
     const els=document.querySelectorAll('[data-i18n]');
-    function applyLang(lang){ els.forEach(el=>{const k=el.getAttribute('data-i18n'); if(dict[lang][k]) el.innerHTML=dict[lang][k];}); document.documentElement.lang=lang; localStorage.setItem('lang',lang); esBtn.classList.toggle('active',lang==='es'); enBtn.classList.toggle('active',lang==='en'); }
-    const esBtn=document.getElementById('esBtn'); const enBtn=document.getElementById('enBtn');
-    esBtn.addEventListener('click',()=>applyLang('es')); enBtn.addEventListener('click',()=>applyLang('en'));
-    applyLang(localStorage.getItem('lang')||'es');
+    function applyLang(lang){ els.forEach(el=>{const k=el.getAttribute('data-i18n'); if(dict[lang][k]) el.innerHTML=dict[lang][k];}); document.documentElement.lang=lang; localStorage.setItem('lang',lang); }
+    (function(){ const lang = localStorage.getItem('lang')||'es'; applyLang(lang); })();
   </script>
 </body>
 </html>
