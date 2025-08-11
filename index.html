@@ -16,145 +16,103 @@
     *{box-sizing:border-box}
     html,body{height:100%}
     body{
-      margin:0; color:var(--text);
+      margin:0;
       background:linear-gradient(180deg,#0c0f14 0%, var(--dark) 100%);
+      color:var(--text);
       font-family:Poppins,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
     }
     a{color:inherit;text-decoration:none}
     img{max-width:100%;height:auto;border:0}
-    .container{width:min(1220px,92vw);margin:0 auto;padding:0 8px}
 
-    /* Header */
+    /* -------- Container: ancho amplio en desktop -------- */
+    .container{
+      width:min(1920px,98vw);
+      margin:0 auto;
+      padding:0 24px;
+    }
+
     header{
-      position:sticky; top:0; z-index:20;
-      background:rgba(14,17,22,.85); backdrop-filter: blur(8px);
+      position:sticky;top:0;z-index:10;
+      background:rgba(14,17,22,.85);
+      backdrop-filter: blur(8px);
       border-bottom:1px solid rgba(255,255,255,.06);
     }
     .row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0;flex-wrap:wrap}
-    .brand{display:flex;align-items:center;gap:12px;min-height:44px}
-    .logo{
-      width: clamp(48px, 10vw, 56px);
-      height: clamp(48px, 10vw, 56px);
-      border-radius:12px; display:block;
-    }
-    .brand-title{display:flex;flex-direction:column;line-height:1}
-    .brand-title h1{
-      margin:0; font-weight:700;
-      font-size: clamp(18px, 5.2vw, 22px);
-      letter-spacing:.2px;
-    }
-    .brand-sub{font-size:clamp(11px,3.2vw,12px);color:var(--muted);margin-top:4px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:44px;height:auto;flex:0 0 auto}
+    .brand-title{display:flex;flex-direction:column}
+    .brand-title h1{font-size:clamp(16px,2.2vw,20px);line-height:1.1;margin:0;font-weight:700}
+    .brand-sub{font-size:12px;color:var(--muted);margin-top:2px}
 
     nav{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-    .link{
-      padding:10px 12px;border-radius:12px;opacity:.95;
-      font-size: clamp(14px, 3.8vw, 14px);
-      line-height:1; min-height:44px; display:flex;align-items:center;
-    }
+    .link{opacity:.9;padding:10px 12px;border-radius:12px}
     .link:hover{background:#131821}
-    .cta{
-      background:var(--yellow); color:#111; font-weight:700;
-      padding:12px 16px; border-radius:12px; line-height:1; min-height:44px; display:flex;align-items:center;
-      font-size: clamp(14px, 3.8vw, 14px);
-    }
+    .cta{background:var(--yellow);color:#111;padding:12px 16px;border-radius:12px;font-weight:700}
     .cta:active{transform:translateY(1px)}
-    .lang{
-      display:inline-flex;gap:6px;align-items:center;
-      border:1px solid rgba(255,255,255,.12); border-radius:999px;
-      padding:6px 10px; color:var(--muted); min-height:44px
-    }
-    .lang button{
-      background:none;border:0;color:inherit;cursor:pointer;
-      padding:8px 10px;border-radius:10px;
-      font-size: clamp(13px, 3.6vw, 13px);
-      line-height:1.1
-    }
+    .lang{display:inline-flex;gap:6px;border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:6px 10px;font-size:12px;color:var(--muted)}
+    .lang button{background:none;border:0;color:inherit;cursor:pointer;padding:4px 8px;border-radius:10px}
     .lang button.active{background:rgba(255,255,255,.08);color:#fff}
 
-    /* Hero */
-    .hero{padding:clamp(20px,6vw,34px) 0 12px;border-bottom:1px solid rgba(255,255,255,.06)}
-    .wrap{display:grid;grid-template-columns:1fr;gap:18px}
-    .title{
-      margin:0 0 10px; line-height:1.1; letter-spacing:.2px;
-      font-size: clamp(28px, 8vw, 48px);
+    @media (min-width:1200px){
+      .logo{width:52px}
     }
-    .subtitle{
-      font-size: clamp(15px, 4.4vw, 19px);
-      color:var(--muted); margin:0 0 16px; max-width:72ch
-    }
+
+    .hero{padding:42px 0 18px;border-bottom:1px solid rgba(255,255,255,.06)}
+    .wrap{display:grid;grid-template-columns:1fr;gap:22px}
+    .title{font-size:clamp(28px,5.6vw,64px);line-height:1.15;margin:0 0 10px}
+    .subtitle{font-size:clamp(14px,2.2vw,20px);color:var(--muted);margin:0 0 18px}
     .actions{display:flex;gap:10px;flex-wrap:wrap}
-    .btn{
-      display:inline-flex;align-items:center;justify-content:center;gap:8px;
-      background:var(--yellow); color:#111; padding:12px 16px; border-radius:14px; font-weight:700;
-      min-height:44px; font-size: clamp(14px, 3.8vw, 14px);
-    }
-    .chip{
-      display:inline-flex;align-items:center;gap:8px;
-      padding:10px 14px;border-radius:999px;background:rgba(242,200,17,.14);
-      color:#ffe08a;font-size: clamp(12px, 3.6vw, 12px); font-weight:600; min-height:40px
-    }
-    .hero-img{
-      background:#0f1114;border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:14px;
-      box-shadow:var(--shadow)
-    }
-    .placeholder{
-      aspect-ratio:16/10;border-radius:14px;background:linear-gradient(135deg,#1a1d22,#0f141a);
-      display:grid;place-items:center;color:#8a93a3;font-size:clamp(13px,3.6vw,14px); text-align:center; padding:10px
-    }
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--yellow);color:#111;padding:12px 16px;border-radius:14px;font-weight:700;min-height:44px}
+    .chip{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:rgba(242,200,17,.14);color:#ffe08a;font-size:12px;font-weight:600}
+    .hero-img{background:#0f1114;border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:14px;box-shadow:var(--shadow)}
+    .placeholder{aspect-ratio:16/10;border-radius:14px;background:linear-gradient(135deg,#1a1d22,#0f141a);display:grid;place-items:center;color:#8a93a3;font-size:14px}
 
-    /* Sections */
-    .section{padding:clamp(22px,6.5vw,34px) 0}
-    .section h2{font-size:clamp(22px,6vw,38px);margin:0 0 12px}
-    .section p.lead{color:var(--muted);max-width:880px;margin:0;font-size:clamp(14px,4.2vw,16px)}
+    .section{padding:36px 0}
+    .section h2{font-size:clamp(22px,3.6vw,40px);margin:0 0 10px}
+    .section p.lead{color:var(--muted);max-width:980px;margin:0}
 
-    .grid{display:grid;grid-template-columns:1fr;gap:16px;margin-top:14px}
+    .grid{display:grid;grid-template-columns:1fr;gap:18px;margin-top:16px}
     .card{background:var(--mid);border:1px solid rgba(255,255,255,.06);border-radius:18px;box-shadow:var(--shadow);overflow:hidden}
     .shot{padding:12px 12px 0}
-    .mock{
-      aspect-ratio:16/10;background:linear-gradient(145deg,#1c232e,#0f141a);
-      border:1px solid rgba(255,255,255,.08);border-radius:14px;display:grid;place-items:center;
-      color:#8a93a3;font-size:clamp(12px,3.6vw,14px);text-align:center;padding:8px
-    }
+    .mock{aspect-ratio:16/10;background:linear-gradient(145deg,#1c232e,#0f141a);border:1px solid rgba(255,255,255,.08);border-radius:14px;display:grid;place-items:center;color:#8a93a3}
     .body{padding:14px}
-    .card h3{margin:0 0 8px;font-size:clamp(15px,4.5vw,18px)}
-    .price{font-size:clamp(18px,5vw,22px);font-weight:700;margin:12px 0 12px}
+    .card h3{margin:0 0 6px;font-size:clamp(16px,1.6vw,20px)}
+    .price{font-size:clamp(18px,2vw,22px);font-weight:700;margin:12px 0 12px}
 
     .steps{display:grid;grid-template-columns:1fr;gap:16px}
     .step{background:var(--mid);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:14px}
-    .n{display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:rgba(255,255,255,.06);font-weight:700;margin-bottom:8px}
+    .n{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:rgba(255,255,255,.06);font-weight:700;margin-bottom:6px}
+    .step p{color:var(--muted);margin:.25rem 0 0}
 
-    footer{border-top:1px solid rgba(255,255,255,.08);padding:22px 0;color:#b7bdc8}
-
-    /* Tablet / Desktop */
-    @media (min-width: 700px){
+    @media (min-width: 900px){
       .wrap{grid-template-columns:1.05fr .95fr}
       .grid{grid-template-columns:1fr 1fr}
       .steps{grid-template-columns:repeat(3,1fr)}
     }
-    @media (min-width: 1060px){
-      .container{padding:0}
+    @media (min-width: 1300px){
       .grid{grid-template-columns:repeat(3,1fr)}
     }
-    @media (min-width: 1400px){
+    @media (min-width: 1600px){
       .grid{grid-template-columns:repeat(4,1fr)}
     }
+
+    footer{border-top:1px solid rgba(255,255,255,.08);padding:22px 0;color:#b7bdc8}
   </style>
 </head>
 <body>
   <header>
     <div class="container row">
       <a class="brand" href="#">
-        <!-- Tu logo original -->
-        <img src="brand.webp" width="56" height="56" alt="PowerCos BI logo" class="logo" />
+        <!-- Usa tu brand.webp (colócalo en la raíz del proyecto) -->
+        <img class="logo" src="brand.webp" alt="PowerCos BI" width="160" height="160" decoding="async" />
         <div class="brand-title">
           <h1>PowerCos BI</h1>
           <div class="brand-sub" data-i18n="brand.subtitle">Customized Organization Solutions</div>
         </div>
       </a>
       <nav>
-        <a class="link hide-sm" href="#plantillas" data-i18n="nav.templates">Plantillas</a>
-        <a class="link hide-sm" href="#como-funciona" data-i18n="nav.how">Cómo funciona</a>
+        <a class="link" href="#plantillas" data-i18n="nav.templates">Plantillas</a>
+        <a class="link" href="#como-funciona" data-i18n="nav.how">Cómo funciona</a>
         <a class="cta" href="#plantillas" data-i18n="nav.cta">Ver plantillas</a>
         <div class="lang" aria-label="language switch">
           <button id="esBtn" class="active" type="button">ES</button>
@@ -287,7 +245,7 @@
   <footer>
     <div class="container row" style="justify-content:space-between">
       <div class="brand" style="gap:10px">
-        <img src="brand.webp" width="56" height="56" alt="" class="logo" />
+        <img class="logo" src="brand.webp" alt="PowerCos BI" width="160" height="160" decoding="async" />
         <strong>PowerCos BI</strong>
       </div>
       <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center">
