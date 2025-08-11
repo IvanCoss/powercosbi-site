@@ -8,42 +8,68 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <style>
-    :root{ --yellow:#F2C811; --dark:#0E1116; --mid:#171B22; --text:#EDEFF3; --muted:#A9AFB9; --shadow:0 10px 28px rgba(0,0,0,.25); }
+    :root{
+      --yellow:#F2C811; --dark:#0E1116; --mid:#171B22; --text:#EDEFF3; --muted:#A9AFB9;
+      --shadow:0 10px 28px rgba(0,0,0,.25);
+    }
     *{box-sizing:border-box}
     html,body{height:100%}
-    body{margin:0;background:linear-gradient(180deg,#0c0f14 0%, var(--dark) 100%);color:var(--text);font-family:Poppins,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;}
+    body{
+      margin:0;background:linear-gradient(180deg,#0c0f14 0%, var(--dark) 100%);
+      color:var(--text);font-family:Poppins,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    }
     a{color:inherit;text-decoration:none}
     img{max-width:100%;height:auto;border:0}
-    /* ------ ancho y alineación ------- */
-    .container{width:min(1400px,94vw);margin-inline:auto;padding-inline:16px}
-    /* ------ header ------- */
-    header{position:sticky;top:0;background:rgba(14,17,22,.85);backdrop-filter: blur(8px);border-bottom:1px solid rgba(255,255,255,.06);z-index:10}
-    .row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:16px 0;flex-wrap:wrap}
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo-img{width:44px;height:44px;border-radius:10px;display:block}
+
+    /* ====== CONTENEDOR GENERAL (secciones) ====== */
+    .container{width:min(1320px,92vw);margin:0 auto;padding:0 6px}
+
+    /* ====== HEADER pegado a la izquierda (solo header, no afecta secciones) ====== */
+    .site-header{
+      position:sticky;top:0;z-index:10;
+      background:rgba(14,17,22,.85);backdrop-filter: blur(8px);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .header-wrap{
+      /* ancho completo y pegado a la izquierda */
+      max-width:none;width:100%;margin:0;
+      padding:12px 16px;
+      display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;
+    }
+    .brand{display:inline-flex;align-items:center;gap:10px}
+    .brand img{height:32px;width:auto;display:block}
     .brand-title{display:flex;flex-direction:column}
-    .brand-title h1{font-size:clamp(18px,2.2vw,22px);line-height:1.1;margin:0;font-weight:700}
-    .brand-sub{font-size:13px;color:var(--muted);margin-top:2px}
-    nav{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
-    .link{opacity:.9;padding:12px 14px;border-radius:12px}
+    .brand-title h1{font-size:16px;line-height:1;margin:0;font-weight:700}
+    .brand-sub{font-size:12px;color:var(--muted);margin-top:2px}
+
+    .main-nav{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+    .link{opacity:.9;padding:10px 12px;border-radius:12px}
     .link:hover{background:#131821}
-    .cta{background:var(--yellow);color:#111;padding:12px 18px;border-radius:12px;font-weight:700}
-    .cta:active{transform:translateY(1px)}
+    .cta{background:var(--yellow);color:#111;padding:12px 16px;border-radius:12px;font-weight:700}
     .lang{display:inline-flex;gap:6px;border:1px solid rgba(255,255,255,.12);border-radius:999px;padding:6px 10px;font-size:12px;color:var(--muted)}
     .lang button{background:none;border:0;color:inherit;cursor:pointer;padding:4px 8px;border-radius:10px}
     .lang button.active{background:rgba(255,255,255,.08);color:#fff}
-    /* ------ hero ------- */
-    .hero{padding:42px 0 18px;border-bottom:1px solid rgba(255,255,255,.06)}
-    .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:22px}
-    .title{font-size:clamp(28px,6.6vw,56px);line-height:1.15;margin:0 0 10px}
-    .subtitle{font-size:clamp(15px,2.3vw,19px);color:var(--muted);margin:0 0 18px}
+
+    @media (min-width:1024px){
+      .header-wrap{padding:12px 24px}
+      .brand img{height:38px}
+      .brand-title h1{font-size:18px}
+    }
+
+    /* ====== HERO ====== */
+    .hero{padding:36px 0 14px;border-bottom:1px solid rgba(255,255,255,.06)}
+    .wrap{display:grid;grid-template-columns:1fr;gap:18px}
+    .title{font-size:clamp(26px,6vw,48px);line-height:1.15;margin:0 0 8px}
+    .subtitle{font-size:clamp(14px,2.6vw,19px);color:var(--muted);margin:0 0 16px}
     .actions{display:flex;gap:10px;flex-wrap:wrap}
     .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--yellow);color:#111;padding:12px 16px;border-radius:14px;font-weight:700;min-height:44px}
     .chip{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border-radius:999px;background:rgba(242,200,17,.14);color:#ffe08a;font-size:12px;font-weight:600}
-    .hero-img{background:#0f1114;border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:16px;box-shadow:var(--shadow)}
+    .hero-img{background:#0f1114;border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:14px;box-shadow:var(--shadow)}
     .placeholder{aspect-ratio:16/10;border-radius:14px;background:linear-gradient(135deg,#1a1d22,#0f141a);display:grid;place-items:center;color:#8a93a3;font-size:14px}
-    /* ------ secciones ------- */
+
+    /* ====== CATÁLOGO ====== */
     .section{padding:30px 0}
     .section h2{font-size:clamp(22px,5vw,38px);margin:0 0 10px}
     .section p.lead{color:var(--muted);max-width:880px;margin:0}
@@ -51,50 +77,53 @@
     .card{background:var(--mid);border:1px solid rgba(255,255,255,.06);border-radius:18px;box-shadow:var(--shadow);overflow:hidden}
     .shot{padding:12px 12px 0}
     .mock{aspect-ratio:16/10;background:linear-gradient(145deg,#1c232e,#0f141a);border:1px solid rgba(255,255,255,.08);border-radius:14px;display:grid;place-items:center;color:#8a93a3}
-    .body{padding:16px}
-    .card h3{margin:0 0 6px;font-size:clamp(16px,3.2vw,19px)}
-    .price{font-size:clamp(18px,3.8vw,22px);font-weight:700;margin:12px 0 12px}
+    .body{padding:14px}
+    .card h3{margin:0 0 6px;font-size:clamp(16px,3.6vw,18px)}
+    .price{font-size:clamp(18px,4.5vw,22px);font-weight:700;margin:12px 0 12px}
+
+    /* ====== PASOS ====== */
     .steps{display:grid;grid-template-columns:1fr;gap:16px}
     .step{background:var(--mid);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:14px}
     .n{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:rgba(255,255,255,.06);font-weight:700;margin-bottom:6px}
     .step p{color:var(--muted);margin:.25rem 0 0}
-    /* ------ responsive ------- */
-    @media (min-width: 700px){ .grid{grid-template-columns:1fr 1fr} .steps{grid-template-columns:repeat(3,1fr)} }
-    @media (min-width: 1060px){ .grid{grid-template-columns:repeat(3,1fr)} }
-    @media (min-width: 1400px){ .grid{grid-template-columns:repeat(4,1fr)} }
-    /* móvil */
-    @media (max-width: 1024px){ .wrap{grid-template-columns:1fr} .hero{padding-top:28px} }
-    @media (max-width: 640px){
-      .container{width:min(100%,94vw);padding-inline:12px}
-      .row{gap:10px;padding:12px 0}
-      .logo-img{width:38px;height:38px}
-      .wrap{gap:16px}
-      .btn{width:100%}
-      .grid{grid-template-columns:1fr;gap:14px}
-      .steps{grid-template-columns:1fr;gap:12px}
+
+    /* ====== FOOTER ====== */
+    footer{border-top:1px solid rgba(255,255,255,.08);padding:22px 0;color:#b7bdc8}
+    .footer-row{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+    /* ====== RESPONSIVE GRIDS ====== */
+    @media (min-width:700px){
+      .wrap{grid-template-columns:1.05fr .95fr}
+      .grid{grid-template-columns:1fr 1fr}
+      .steps{grid-template-columns:repeat(3,1fr)}
     }
-    /* ------ footer ------- */
-    footer{border-top:1px solid rgba(255,255,255,.08);padding:24px 0;color:#b7bdc8}
-    footer .row{padding:0}
-    footer .brand{gap:10px}
-    footer .logo-img{width:40px;height:40px}
-    footer .links{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+    @media (min-width:1060px){
+      .container{padding:0}
+      .grid{grid-template-columns:repeat(3,1fr)}
+    }
+    @media (min-width:1400px){
+      .grid{grid-template-columns:repeat(4,1fr)}
+    }
   </style>
 </head>
+
 <body>
-  <header>
-    <div class="container row">
+  <!-- ===== HEADER pegado a la izquierda ===== -->
+  <header class="site-header">
+    <div class="header-wrap">
       <a class="brand" href="#">
-        <img src="brand.webp" alt="PowerCos BI" class="logo-img" loading="eager">
+        <!-- Tu logo de marca -->
+        <img src="brand.webp" alt="PowerCos BI logo" loading="eager" />
         <div class="brand-title">
           <h1>PowerCos BI</h1>
           <div class="brand-sub" data-i18n="brand.subtitle">Customized Organization Solutions</div>
         </div>
       </a>
-      <nav>
-        <a class="link hide-sm" href="#plantillas" data-i18n="nav.templates">Plantillas</a>
-        <a class="link hide-sm" href="#como-funciona" data-i18n="nav.how">Cómo funciona</a>
-        <a class="cta" href="#plantillas" data-i18n="nav.cta">Ver plantillas</a>
+
+      <nav class="main-nav">
+        <a class="link" href="#plantillas" data-i18n="nav.templates">Plantillas</a>
+        <a class="link" href="#como-funciona" data-i18n="nav.how">Cómo funciona</a>
+        <a class="cta"  href="#plantillas" data-i18n="nav.cta">Ver plantillas</a>
         <div class="lang" aria-label="language switch">
           <button id="esBtn" class="active" type="button">ES</button>
           <button id="enBtn" type="button">EN</button>
@@ -103,6 +132,7 @@
     </div>
   </header>
 
+  <!-- ===== HERO ===== -->
   <section class="hero">
     <div class="container wrap">
       <div>
@@ -119,10 +149,12 @@
     </div>
   </section>
 
+  <!-- ===== CATÁLOGO ===== -->
   <section id="plantillas" class="section">
     <div class="container">
       <h2 data-i18n="catalog.title">Plantillas</h2>
       <p class="lead" data-i18n="catalog.lead">Diseñadas para ventas, finanzas, marketing y operaciones. Cada archivo incluye guía rápida de personalización.</p>
+
       <div class="grid">
         <article class="card">
           <div class="shot"><div class="mock" data-i18n="cards.sales.preview">Sales Overview (preview)</div></div>
@@ -133,6 +165,7 @@
             <a class="btn" href="https://www.paypal.me/ivancoss07/19USD" target="_blank" rel="noopener" data-i18n="cards.buy">Comprar ahora</a>
           </div>
         </article>
+
         <article class="card">
           <div class="shot"><div class="mock" data-i18n="cards.fin.preview">Financial Dashboard (preview)</div></div>
           <div class="body">
@@ -142,6 +175,7 @@
             <a class="btn" href="https://www.paypal.me/ivancoss07/24USD" target="_blank" rel="noopener" data-i18n="cards.buy">Comprar ahora</a>
           </div>
         </article>
+
         <article class="card">
           <div class="shot"><div class="mock" data-i18n="cards.c360.preview">Customer Analysis (preview)</div></div>
           <div class="body">
@@ -151,6 +185,7 @@
             <a class="btn" href="https://www.paypal.me/ivancoss07/21USD" target="_blank" rel="noopener" data-i18n="cards.buy">Comprar ahora</a>
           </div>
         </article>
+
         <article class="card">
           <div class="shot"><div class="mock" data-i18n="cards.mkt.preview">Marketing Performance (preview)</div></div>
           <div class="body">
@@ -164,6 +199,7 @@
     </div>
   </section>
 
+  <!-- ===== ENFOQUE ===== -->
   <section class="section" id="about">
     <div class="container">
       <h2 data-i18n="about.title">Nuestro enfoque</h2>
@@ -171,6 +207,7 @@
     </div>
   </section>
 
+  <!-- ===== CÓMO FUNCIONA ===== -->
   <section id="como-funciona" class="section">
     <div class="container">
       <h2 data-i18n="how.title">Cómo funciona</h2>
@@ -194,6 +231,7 @@
     </div>
   </section>
 
+  <!-- ===== CONTACTO ===== -->
   <section id="contacto" class="section">
     <div class="container">
       <h2 data-i18n="contact.title">Contacto y soporte</h2>
@@ -223,13 +261,14 @@
     </div>
   </section>
 
+  <!-- ===== FOOTER ===== -->
   <footer>
-    <div class="container row" style="justify-content:space-between">
+    <div class="container footer-row">
       <div class="brand" style="gap:10px">
-        <img src="brand.webp" alt="PowerCos BI" class="logo-img" loading="lazy">
+        <img src="brand.webp" alt="PowerCos BI" style="height:28px" />
         <strong>PowerCos BI</strong>
       </div>
-      <div class="links">
+      <div style="display:flex;gap:14px;flex-wrap:wrap;align-items:center">
         <a href="#" style="color:var(--muted)">Términos de uso</a>
         <a href="#" style="color:var(--muted)">Aviso de privacidad</a>
         <span style="color:var(--muted)">© <span id="y"></span> PowerCos BI</span>
@@ -238,7 +277,10 @@
   </footer>
 
   <script>
+    // año en footer
     document.getElementById('y').textContent = new Date().getFullYear();
+
+    // i18n
     const dict = {
       es: {
         'brand.subtitle':'Customized Organization Solutions',
@@ -273,6 +315,8 @@
         'contact.title':'Contact & support','contact.lead':'Questions about a template or your purchase? Write me and I’ll get back to you shortly.','contact.name':'Name','contact.email':'Email','contact.msg':'Message','contact.send':'Send message','contact.alt':'You can also email me at <a href="mailto:ivanhcoss@icloud.com" style="text-decoration:underline">ivanhcoss@icloud.com</a>.'
       }
     };
+    const esBtn = document.getElementById('esBtn');
+    const enBtn = document.getElementById('enBtn');
     const els = document.querySelectorAll('[data-i18n]');
     function applyLang(lang){
       els.forEach(el=>{ const k = el.getAttribute('data-i18n'); if(dict[lang][k]) el.innerHTML = dict[lang][k]; });
@@ -281,8 +325,6 @@
       esBtn.classList.toggle('active', lang==='es');
       enBtn.classList.toggle('active', lang==='en');
     }
-    const esBtn = document.getElementById('esBtn');
-    const enBtn = document.getElementById('enBtn');
     esBtn.addEventListener('click', ()=>applyLang('es'));
     enBtn.addEventListener('click', ()=>applyLang('en'));
     applyLang(localStorage.getItem('lang')||'es');
