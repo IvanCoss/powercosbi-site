@@ -88,7 +88,7 @@
     }
     .footer-left{display:flex;align-items:center;gap:10px}
     .footer-left img{height:28px;width:auto}
-    .footer-links{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+    .footer-links{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
     .footer-links a{color:var(--muted)}
     .footer-right{color:var(--muted)}
 
@@ -121,6 +121,7 @@
           <div class="brand-sub" data-i18n="brand.subtitle">Customized Organization Solutions</div>
         </div>
       </a>
+
       <nav class="main-nav">
         <a class="link" href="#plantillas" data-i18n="nav.templates">Plantillas</a>
         <a class="link" href="#como-funciona" data-i18n="nav.how">Cómo funciona</a>
@@ -133,25 +134,140 @@
     </div>
   </header>
 
-  <!-- ===== CONTENIDO OMITIDO (tu catálogo, secciones, etc. sigue igual) ===== -->
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="container wrap">
+      <div>
+        <h2 class="title" data-i18n="hero.title">Dashboards inteligentes para ti</h2>
+        <p class="subtitle" data-i18n="hero.subtitle">Customized Organization Solutions – Soluciones personalizadas para tu organización.</p>
+        <div class="actions">
+          <a class="btn" href="#plantillas" data-i18n="hero.btn">Explorar plantillas</a>
+          <span class="chip" data-i18n="hero.badge">Actualizaciones incluidas</span>
+        </div>
+      </div>
+      <div class="hero-img">
+        <div class="placeholder" data-i18n="hero.mock">(Aquí va tu mockup de dashboard)</div>
+      </div>
+    </div>
+  </section>
 
-  <!-- ===== FOOTER corregido ===== -->
+  <!-- ===== CATÁLOGO ===== -->
+  <section id="plantillas" class="section">
+    <div class="container">
+      <h2 data-i18n="catalog.title">Plantillas</h2>
+      <p class="lead" data-i18n="catalog.lead">Diseñadas para ventas, finanzas, marketing y operaciones. Cada archivo incluye guía rápida de personalización.</p>
+
+      <div class="grid">
+        <article class="card">
+          <div class="shot"><div class="mock" data-i18n="cards.sales.preview">Sales Overview (preview)</div></div>
+          <div class="body">
+            <h3 data-i18n="cards.sales.title">Ventas – Sales Overview</h3>
+            <div class="chip" data-i18n="cards.sales.meta">.pbit + guía PDF</div>
+            <div class="price">$19 USD</div>
+            <a class="btn" href="https://www.paypal.me/ivancoss07/19USD" target="_blank" rel="noopener" data-i18n="cards.buy">Comprar ahora</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="shot"><div class="mock" data-i18n="cards.fin.preview">Financial Dashboard (preview)</div></div>
+          <div class="body">
+            <h3 data-i18n="cards.fin.title">Finanzas – P&L / Cashflow</h3>
+            <div class="chip" data-i18n="cards.fin.meta">.pbit + ejemplo CSV</div>
+            <div class="price">$24 USD</div>
+            <a class="btn" href="https://www.paypal.me/ivancoss07/24USD" target="_blank" rel="noopener" data-i18n="cards.buy">Comprar ahora</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="shot"><div class="mock" data-i18n="cards.c360.preview">Customer Analysis (preview)</div></div>
+          <div class="body">
+            <h3 data-i18n="cards.c360.title">Clientes – Customer 360</h3>
+            <div class="chip" data-i18n="cards.c360.meta">Segmentación + RFM</div>
+            <div class="price">$21 USD</div>
+            <a class="btn" href="https://www.paypal.me/ivancoss07/21USD" target="_blank" rel="noopener" data-i18n="cards.buy">Comprar ahora</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="shot"><div class="mock" data-i18n="cards.mkt.preview">Marketing Performance (preview)</div></div>
+          <div class="body">
+            <h3 data-i18n="cards.mkt.title">Marketing – Performance</h3>
+            <div class="chip" data-i18n="cards.mkt.meta">UTM + KPIs</div>
+            <div class="price">$21 USD</div>
+            <a class="btn" href="https://www.paypal.me/ivancoss07/21USD" target="_blank" rel="noopener" data-i18n="cards.buy">Comprar ahora</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ENFOQUE ===== -->
+  <section class="section" id="about">
+    <div class="container">
+      <h2 data-i18n="about.title">Nuestro enfoque</h2>
+      <p class="lead" data-i18n="about.copy">Ofrecemos soluciones personalizadas para organizar y optimizar tu operación — dashboards, plantillas y soporte a la medida de tu negocio.</p>
+    </div>
+  </section>
+
+  <!-- ===== CÓMO FUNCIONA ===== -->
+  <section id="como-funciona" class="section">
+    <div class="container">
+      <h2 data-i18n="how.title">Cómo funciona</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="n">1</div>
+          <h3 data-i18n="how.s1.t">Explora plantillas</h3>
+          <p data-i18n="how.s1.d">Navega el catálogo y elige el dashboard que necesitas.</p>
+        </div>
+        <div class="step">
+          <div class="n">2</div>
+          <h3 data-i18n="how.s2.t">Compra segura</h3>
+          <p data-i18n="how.s2.d">Paga con Stripe o PayPal. Recibes el enlace de descarga al instante.</p>
+        </div>
+        <div class="step">
+          <div class="n">3</div>
+          <h3 data-i18n="how.s3.t">Conecta tus datos</h3>
+          <p data-i18n="how.s3.d">Abre el .pbit en Power BI, cambia origen de datos y listo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACTO ===== -->
+  <section id="contacto" class="section">
+    <div class="container">
+      <h2 data-i18n="contact.title">Contacto y soporte</h2>
+      <p class="lead" data-i18n="contact.lead">¿Dudas sobre una plantilla o tu compra? Escríbeme y te respondo en breve.</p>
+      <div class="card" style="margin-top:14px">
+        <div class="body">
+          <form action="https://formsubmit.co/ivanhcoss@icloud.com" method="POST" style="display:grid;gap:12px">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://powercosbi.com/gracias.html">
+            <label>
+              <span style="display:block;margin-bottom:6px;color:var(--muted)" data-i18n="contact.name">Nombre</span>
+              <input name="nombre" required placeholder="Tu nombre" style="width:100%;padding:12px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.14);background:#0f1114;color:var(--text)" />
+            </label>
+            <label>
+              <span style="display:block;margin-bottom:6px;color:var(--muted)" data-i18n="contact.email">Correo</span>
+              <input type="email" name="correo" required placeholder="tucorreo@dominio.com" style="width:100%;padding:12px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.14);background:#0f1114;color:var(--text)" />
+            </label>
+            <label>
+              <span style="display:block;margin-bottom:6px;color:var(--muted)" data-i18n="contact.msg">Mensaje</span>
+              <textarea name="mensaje" rows="5" required placeholder="Cuéntame qué necesitas" style="width:100%;padding:12px 14px;border-radius:12px;border:1px solid rgba(255,255,255,.14);background:#0f1114;color:var(--text)"></textarea>
+            </label>
+            <button class="btn" type="submit" data-i18n="contact.send">Enviar mensaje</button>
+            <div style="color:var(--muted);font-size:14px" data-i18n="contact.alt">También puedes escribirme directo a <a href="mailto:ivanhcoss@icloud.com" style="text-decoration:underline">ivanhcoss@icloud.com</a>.</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
   <footer class="site-footer">
     <div class="footer-wrap">
       <div class="footer-left">
         <img src="brand.webp" alt="PowerCos BI" />
         <strong>PowerCos BI</strong>
       </div>
-      <div class="footer-links">
-        <a href="#" data-i18n="footer.terms">Términos de uso</a> |
-        <a href="#" data-i18n="footer.privacy">Aviso de privacidad</a>
-      </div>
-      <div class="footer-right">© <span id="y"></span> PowerCos BI</div>
-    </div>
-  </footer>
-
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+      <div class="footer-links
